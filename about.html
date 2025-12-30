@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Anacortes Nonprofit Navigator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-mark">
+                    <div class="logo-shape shape1"></div>
+                    <div class="logo-shape shape2"></div>
+                    <div class="logo-shape shape3"></div>
+                </div>
+                <div class="logo-text">
+                    <h1>Anacortes Nonprofit Navigator</h1>
+                    <p class="tagline">Practical systems for mission-driven organizations</p>
+                </div>
+            </div>
+            <nav>
+                <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="about-page">
+        <div class="container">
+            <div class="about-grid">
+                <section class="about-main">
+                    <h2>About Me</h2>
+                    <p class="intro">A Technical Foundation with a Community Heart</p>
+
+                    <!-- Bio photo placeholder: replace <div> with <img src="..."> when ready -->
+                    <div class="bio-photo" aria-hidden="true"></div>
+
+                    <!-- Three subheadings: paste your content under each heading -->
+                    <div class="subsection">
+                        <h3>Background & Experience</h3>
+                        <p>I believe that the organizations making the most difference in our community deserve the highest quality support. My journey to founding Anacortes Nonprofit Navigator has been a 20-year path of combining technical expertise with a passion for local service.</p>
+                        <p>With a Computer Science degree and an MBA, I spent the early part of my career as a consultant building complex systems for corporations. This phase of my life taught me the power of robust infrastructure and the efficiency that comes from well-designed technology.</p>
+                        <p>After shifting my focus to raising my family and volunteering locally, I returned to the professional world with a new mission: serving the organizations that hold our community together.</p>
+                    </div>
+                   <div class="subsection">
+                        <h3>Community Involvement</h3>
+                        <p>Paste your content here about volunteer work, local partnerships, or community ties.</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Approach & Philosophy</h3>
+                        <p>Paste your content here describing how you work with clients and your guiding principles.</p>
+                    </div>
+
+                </section>
+
+                <aside class="about-sidebar">
+                    <div class="core-values">
+                        <h4>Core Values</h4>
+                        <ul>
+                            <li>Service: Put community needs first</li>
+                            <li>Clarity: Practical, transparent systems</li>
+                            <li>Sustainability: Build solutions that last</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Anacortes Nonprofit Navigator. Serving nonprofits in Anacortes and beyond.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('nav-menu');
+            if (menu) menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
