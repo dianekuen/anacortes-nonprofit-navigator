@@ -281,6 +281,7 @@ nav a.active {
     color: #5B8BA0;
 }
 
+
 /* About Section (shared defaults) */
 .about {
     padding: 80px 0;
@@ -298,8 +299,6 @@ nav a.active {
     color: #6B6B6B;
     margin-bottom: 20px;
 }
-
-
 
 
 /* Contact Section */
@@ -512,8 +511,6 @@ main.about-page {
 .about-main {
     background: #FFFFFF;
     padding: 30px;
-    border-radius: 8px;
-    border-left: 4px solid #C85A54;
 }
 
 .about-main h2 {
@@ -522,10 +519,34 @@ main.about-page {
     margin-bottom: 12px;
 }
 
+.about-main h3 {
+    color: #1A365D;
+    font-size: 22px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-main h3:before {
+    content: "";
+    width: 4px;
+    height: 24px;
+    background: #C85A54;
+    border-radius: 2px;
+}
+
 .about-main .intro {
-    color: #6B6B6B;
-    font-size: 18px;
+    color: #C85A54;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
     margin-bottom: 18px;
+}
+
+.about-main .org-name {
+    color: #1A365D;
+    font-weight: 600;
 }
 
 .bio-photo {
@@ -562,7 +583,8 @@ main.about-page {
     background: linear-gradient(180deg, #FFF 0%, #FFFFFF 100%);
     padding: 22px;
     border-radius: 8px;
-    border-left: 4px solid #1A365D;
+    border: 2px solid #E0F2FE;
+    border-left: 4px solid #1A365D
 }
 
 .core-values h4 {
