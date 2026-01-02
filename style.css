@@ -7,8 +7,9 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #404040;
+    color: #2D3748;
     line-height: 1.6;
+    background: #FFFFFF
 }
 
 .container {
@@ -19,12 +20,13 @@ body {
 
 /* Header */
 header {
-    background: #F7F5F0;
+    background: #FFFFFF;
     padding: 20px 0;
-    border-bottom: 2px solid #2C5F6F;
+    border-bottom: 2px solid #1A365D;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .header-content {
@@ -42,7 +44,7 @@ nav ul {
 }
 
 nav a {
-    color: #2C5F6F;
+    color: #1A365D;
     text-decoration: none;
     font-weight: 600;
     font-size: 16px;
@@ -50,18 +52,18 @@ nav a {
 }
 
 nav a:hover {
-    color: #E07A5F;
+    color: #C85A54;
 }
 
 nav a.active {
-    color: #E07A5F;
+    color: #C85A54;
 }
 
 .mobile-menu-toggle {
     display: none;
     background: none;
     border: none;
-    color: #2C5F6F;
+    color: #1A365D;
     font-size: 24px;
     cursor: pointer;
 }
@@ -88,17 +90,17 @@ nav a.active {
 }
 
 .shape2 {
-    background: #E07A5F;
+    background: #C85A54;
 }
 
 .shape3 {
-    background: #A8B5A1;
+    background: #5B8BA0;
 }
 
 .logo-text h1 {
     font-size: 28px;
     font-weight: 700;
-    color: #2C5F6F;
+    color: #1A365D;
     letter-spacing: 0.5px;
     line-height: 1.2;
 }
@@ -111,14 +113,14 @@ nav a.active {
 
 .logo-text .tagline {
     font-size: 13px;
-    color: #E07A5F;
+    color: #C85A54;
     font-style: italic;
     margin-top: 2px;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #2C5F6F 0%, #1B4965 100%);
+    background: linear-gradient(135deg, #1A365D 0%, #0F2C59 100%);
     color: white;
     padding: 80px 0;
     text-align: center;
@@ -141,18 +143,21 @@ nav a.active {
 
 .cta-button {
     display: inline-block;
-    background: #E07A5F;
+    background: #C85A54;
     color: white;
     padding: 16px 40px;
     border-radius: 6px;
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
-    transition: background 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(200, 90, 84, 0.3);
 }
 
 .cta-button:hover {
-    background: #D4745E;
+    background: #B54A44;
+    box-shadow: 0 6px 8px rgba(200, 90, 84, 0.4);
+    transform: translateY(-2px);
 }
 
 /* Services Section */
@@ -164,14 +169,14 @@ nav a.active {
 .section-title {
     text-align: center;
     font-size: 36px;
-    color: #2C5F6F;
+    color: #1A365D;
     margin-bottom: 15px;
 }
 
 .section-philosophy {
     text-align: center;
     font-size: 20px;
-    color: #E07A5F;
+    color: #C85A54;
     font-weight: 600;
     margin-bottom: 50px;
     font-style: italic;
@@ -186,18 +191,19 @@ nav a.active {
 .service-card {
     padding: 35px;
     border-radius: 8px;
-    background: #F7F5F0;
-    border-left: 4px solid #E07A5F;
+    background: #FFFFFF;
+    border: 2px solid #E0F2FE;
+    border-left: 5px solid #C85A54;
 }
 
 .service-card h3 {
-    color: #2C5F6F;
+    color: #1A365D;
     font-size: 24px;
     margin-bottom: 10px;
 }
 
 .service-tagline {
-    color: #E07A5F;
+    color: #C85A54;
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 15px;
@@ -205,7 +211,7 @@ nav a.active {
 }
 
 .service-description {
-    color: #6B6B6B;
+    color: #5B8BA0;
     font-size: 16px;
     margin-bottom: 20px;
     line-height: 1.6;
@@ -217,7 +223,7 @@ nav a.active {
 }
 
 .service-features li {
-    color: #404040;
+    color: #2D3748;
     font-size: 15px;
     margin-bottom: 10px;
     padding-left: 25px;
@@ -226,7 +232,7 @@ nav a.active {
 
 .service-features li:before {
     content: "✓";
-    color: #A8B5A1;
+    color: #5B8BA0;
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -236,7 +242,7 @@ nav a.active {
 /* How It Works */
 .how-it-works {
     padding: 80px 0;
-    background: #E8F4F8;
+    background: #E0F2FE;
 }
 
 .steps {
@@ -254,7 +260,7 @@ nav a.active {
 .step-number {
     width: 60px;
     height: 60px;
-    background: #2C5F6F;
+    background: #1A365D;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -266,13 +272,13 @@ nav a.active {
 }
 
 .step h3 {
-    color: #2C5F6F;
+    color: #1A365D;
     font-size: 20px;
     margin-bottom: 10px;
 }
 
 .step p {
-    color: #6B6B6B;
+    color: #5B8BA0;
 }
 
 /* About Section (shared defaults) */
@@ -293,10 +299,13 @@ nav a.active {
     margin-bottom: 20px;
 }
 
+
+
+
 /* Contact Section */
 .contact {
     padding: 80px 0;
-    background: #F7F5F0;
+    background: #FEF3E2;
     text-align: center;
 }
 
@@ -313,7 +322,7 @@ nav a.active {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #2C5F6F;
+    color: #1A365D;
     font-weight: 600;
 }
 
@@ -321,7 +330,7 @@ nav a.active {
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 2px solid #A8B5A1;
+    border: 2px solid #5B8BA0;
     border-radius: 4px;
     font-size: 16px;
     font-family: inherit;
@@ -333,7 +342,7 @@ nav a.active {
 }
 
 .submit-button {
-    background: #2C5F6F;
+    background: #1A365D;
     color: white;
     padding: 14px 50px;
     border: none;
@@ -350,7 +359,7 @@ nav a.active {
 
 /* Footer */
 footer {
-    background: #2C5F6F;
+    background: #1A365D;
     color: white;
     padding: 30px 0;
     text-align: center;
@@ -391,19 +400,19 @@ footer p {
     max-width: 900px;
     margin: 0 auto 50px;
     padding: 40px;
-    background: #F7F5F0;
+    background: #FFFFFF;
     border-radius: 8px;
-    border-left: 4px solid #E07A5F;
+    border-left: 4px solid #C85A54;
 }
 
 .service-detail h3 {
-    color: #2C5F6F;
+    color: #1A365D;
     font-size: 28px;
     margin-bottom: 10px;
 }
 
 .service-detail .tagline {
-    color: #E07A5F;
+    color: #C85A54;
     font-size: 17px;
     font-weight: 600;
     margin-bottom: 20px;
@@ -418,7 +427,7 @@ footer p {
 }
 
 .service-detail h4 {
-    color: #2C5F6F;
+    color: #1A365D;
     font-size: 18px;
     margin-bottom: 15px;
     margin-top: 25px;
@@ -440,7 +449,7 @@ footer p {
 
 .service-detail ul li:before {
     content: "✓";
-    color: #A8B5A1;
+    color: #5B8BA0;
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -501,14 +510,14 @@ main.about-page {
 }
 
 .about-main {
-    background: #F7F5F0;
+    background: #FFFFFF;
     padding: 30px;
     border-radius: 8px;
-    border-left: 4px solid #E07A5F;
+    border-left: 4px solid #C85A54;
 }
 
 .about-main h2 {
-    color: #2C5F6F;
+    color: #1A365D;
     font-size: 32px;
     margin-bottom: 12px;
 }
@@ -534,7 +543,7 @@ main.about-page {
 }
 
 .subsection h3 {
-    color: #2C5F6F;
+    color: #1A365D;
     font-size: 20px;
     margin-bottom: 8px;
 }
@@ -550,14 +559,14 @@ main.about-page {
 }
 
 .core-values {
-    background: linear-gradient(180deg, #FFF 0%, #F7F5F0 100%);
+    background: linear-gradient(180deg, #FFF 0%, #FFFFFF 100%);
     padding: 22px;
     border-radius: 8px;
-    border-left: 4px solid #2C5F6F;
+    border-left: 4px solid #1A365D;
 }
 
 .core-values h4 {
-    color: #2C5F6F;
+    color: #1A365D;
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -578,7 +587,7 @@ main.about-page {
     content: "•";
     position: absolute;
     left: 0;
-    color: #E07A5F;
+    color: #C85A54;
     font-weight: 700;
 }
 
