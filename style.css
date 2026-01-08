@@ -112,7 +112,8 @@ nav a.active {
 }
 
 .logo-text .tagline {
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 550;
     color: #C85A54;
     font-style: italic;
     margin-top: 2px;
@@ -559,6 +560,13 @@ main.about-page {
     object-fit: cover;
 }
 
+.bio-subtitle {
+    font-size: 14px;
+    color: #5B8BA0;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
 .subsection {
     margin-bottom: 18px;
 }
@@ -573,6 +581,7 @@ main.about-page {
     color: #404040;
     font-size: 16px;
     line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 .about-sidebar {
