@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anacortes Nonprofit Navigator</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">
+                <a href="index.html" class="logo">
                     <div class="logo-mark">
                         <div class="logo-shape shape1"></div>
                         <div class="logo-shape shape2"></div>
@@ -21,7 +23,7 @@
                         <h1>Anacortes Nonprofit Navigator</h1>
                         <p class="tagline">Practical systems for mission-driven organizations</p>
                     </div>
-                </div>
+                </a>
                 <nav>
                     <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
                     <ul id="nav-menu">
@@ -35,101 +37,104 @@
         </div>
     </header>
 
- <!-- Services Page -->
-<section class="services">
-    <div class="container">
-        <h2 class="section-title">Services</h2>
-        <p class="section-philosophy">
-            Practical, flexible support designed for small nonprofits with limited staff and capacity.
-        </p>
+    <!-- Services Page -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <p class="section-philosophy">
+                Practical, flexible support designed for small nonprofits with limited staff and capacity.
+            </p>
 
-        <div class="services-grid">
+            <div class="services-grid">
 
-            <!-- Service 1 -->
-            <div class="service-card">
-                <h3>Operations & Systems Assessment</h3>
-                <p class="service-tagline">Understand what’s working, what’s not, and where to focus first</p>
-                <p class="service-description">
-                    A short, focused engagement to review your current tools, workflows, and operational pain points.
-                    You’ll receive clear recommendations and a realistic roadmap based on your capacity and budget.
-                </p>
-                <ul class="service-features">
-                    <li>Audit of core systems (CRM, email, files, fundraising tools)</li>
-                    <li>Workflow review and identification of inefficiencies</li>
-                    <li>Security and access review</li>
-                    <li>Prioritized recommendations and quick wins</li>
-                </ul>
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <h3>Operations & Systems Assessment</h3>
+                    <p class="service-tagline">Understand what’s working, what’s not, and where to focus first</p>
+                    <p class="service-description">
+                        A short, focused engagement to review your current tools, workflows, and operational pain
+                        points.
+                        You’ll receive clear recommendations and a realistic roadmap based on your capacity and budget.
+                    </p>
+                    <ul class="service-features">
+                        <li>Audit of core systems (CRM, email, files, fundraising tools)</li>
+                        <li>Workflow review and identification of inefficiencies</li>
+                        <li>Security and access review</li>
+                        <li>Prioritized recommendations and quick wins</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <h3>Donor Management & CRM Support</h3>
+                    <p class="service-tagline">Build a donor system your team will actually use</p>
+                    <p class="service-description">
+                        Support for nonprofits choosing a new CRM or struggling with an existing donor database.
+                        The goal is a system that fits your workflows and supports fundraising—not one that creates more
+                        work.
+                    </p>
+                    <ul class="service-features">
+                        <li>CRM selection guidance</li>
+                        <li>System setup or cleanup</li>
+                        <li>Data imports and structure</li>
+                        <li>Basic fundraising and donor reporting</li>
+                        <li>Staff training and documentation</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <h3>Core Operations & Team Systems</h3>
+                    <p class="service-tagline">Reduce friction in how your team works together</p>
+                    <p class="service-description">
+                        When files, email, and processes are disorganized, everything takes longer.
+                        I help nonprofits create clear, shared systems that support collaboration and continuity.
+                    </p>
+                    <ul class="service-features">
+                        <li>Email, document, and file-sharing setup (Google Workspace or Microsoft 365)</li>
+                        <li>Folder structures and naming conventions</li>
+                        <li>Access and permission guidelines</li>
+                        <li>Basic security best practices</li>
+                        <li>Simple documentation for onboarding and transitions</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <h3>Reporting & Financial Operations Support</h3>
+                    <p class="service-tagline">Turn data into information you can rely on</p>
+                    <p class="service-description">
+                        Designed to support leadership, boards, and funders with clear, consistent reporting.
+                        I focus on creating repeatable processes your team can maintain independently.
+                    </p>
+                    <ul class="service-features">
+                        <li>Review of current financial and program reporting</li>
+                        <li>Creation of standard report templates</li>
+                        <li>Alignment between finance, fundraising, and program data</li>
+                        <li>Documentation for ongoing use</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <h3>Project & Event Support</h3>
+                    <p class="service-tagline">Extra operational support when it matters most</p>
+                    <p class="service-description">
+                        Short-term support for time-bound projects or events that require additional operational
+                        capacity,
+                        such as fundraising events, annual appeals, or special initiatives.
+                    </p>
+                    <ul class="service-features">
+                        <li>Project planning and timeline development</li>
+                        <li>Tool recommendations and system integration</li>
+                        <li>Setup and coordination support</li>
+                        <li>Post-project documentation and lessons learned</li>
+                    </ul>
+                </div>
+
             </div>
-
-            <!-- Service 2 -->
-            <div class="service-card">
-                <h3>Donor Management & CRM Support</h3>
-                <p class="service-tagline">Build a donor system your team will actually use</p>
-                <p class="service-description">
-                    Support for nonprofits choosing a new CRM or struggling with an existing donor database.
-                    The goal is a system that fits your workflows and supports fundraising—not one that creates more work.
-                </p>
-                <ul class="service-features">
-                    <li>CRM selection guidance</li>
-                    <li>System setup or cleanup</li>
-                    <li>Data imports and structure</li>
-                    <li>Basic fundraising and donor reporting</li>
-                    <li>Staff training and documentation</li>
-                </ul>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="service-card">
-                <h3>Core Operations & Team Systems</h3>
-                <p class="service-tagline">Reduce friction in how your team works together</p>
-                <p class="service-description">
-                    When files, email, and processes are disorganized, everything takes longer.
-                    I help nonprofits create clear, shared systems that support collaboration and continuity.
-                </p>
-                <ul class="service-features">
-                    <li>Email, document, and file-sharing setup (Google Workspace or Microsoft 365)</li>
-                    <li>Folder structures and naming conventions</li>
-                    <li>Access and permission guidelines</li>
-                    <li>Basic security best practices</li>
-                    <li>Simple documentation for onboarding and transitions</li>
-                </ul>
-            </div>
-
-            <!-- Service 4 -->
-            <div class="service-card">
-                <h3>Reporting & Financial Operations Support</h3>
-                <p class="service-tagline">Turn data into information you can rely on</p>
-                <p class="service-description">
-                    Designed to support leadership, boards, and funders with clear, consistent reporting.
-                    I focus on creating repeatable processes your team can maintain independently.
-                </p>
-                <ul class="service-features">
-                    <li>Review of current financial and program reporting</li>
-                    <li>Creation of standard report templates</li>
-                    <li>Alignment between finance, fundraising, and program data</li>
-                    <li>Documentation for ongoing use</li>
-                </ul>
-            </div>
-
-            <!-- Service 5 -->
-            <div class="service-card">
-                <h3>Project & Event Support</h3>
-                <p class="service-tagline">Extra operational support when it matters most</p>
-                <p class="service-description">
-                    Short-term support for time-bound projects or events that require additional operational capacity,
-                    such as fundraising events, annual appeals, or special initiatives.
-                </p>
-                <ul class="service-features">
-                    <li>Project planning and timeline development</li>
-                    <li>Tool recommendations and system integration</li>
-                    <li>Setup and coordination support</li>
-                    <li>Post-project documentation and lessons learned</li>
-                </ul>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -144,28 +149,29 @@
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
-            
+
             // Show selected page
             document.getElementById(pageName + '-page').classList.add('active');
-            
+
             // Update nav active state
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
             });
             event.target.classList.add('active');
-            
+
             // Scroll to top
             window.scrollTo(0, 0);
-            
+
             // Close mobile menu if open
             document.getElementById('nav-menu').classList.remove('show');
-            
+
             return false;
         }
-        
+
         function toggleMenu() {
             document.getElementById('nav-menu').classList.toggle('show');
         }
     </script>
 </body>
+
 </html>
