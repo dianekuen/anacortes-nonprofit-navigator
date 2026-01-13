@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator's Log - Operational insights for mission-driven organizations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2D3748;
+            line-height: 1.6;
+            background: #FFFFFF;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #FFFFFF;
+            padding: 30px 0;
+            border-bottom: 3px solid #1A365D;
+            margin-bottom: 40px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .blog-branding {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .business-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .logo-square {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+        }
+        
+        .square1 { background: #1A365D; }
+        .square2 { background: #C85A54; }
+        .square3 { background: #5B8BA0; }
+        
+        .business-name {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .business-name span {
+            font-size: 13px;
+            color: #1A365D;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .divider {
+            width: 2px;
+            height: 50px;
+            background: #E0F2FE;
+        }
+        
+        .blog-title-section h1 {
+            font-size: 32px;
+            color: #1A365D;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .blog-title-section p {
+            font-size: 14px;
+            color: #C85A54;
+            font-style: italic;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: #1A365D;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #C85A54;
+        }
+        
+        /* Hero/Featured Post */
+        .featured-post {
+            background: linear-gradient(135deg, #1A365D 0%, #0F2C59 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+        }
+        
+        .featured-label {
+            display: inline-block;
+            background: #C85A54;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+        
+        .featured-post h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .featured-post .excerpt {
+            font-size: 18px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+        
+        .post-meta {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            background: #C85A54;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .read-more:hover {
+            background: #B54A44;
+            transform: translateY(-2px);
+        }
+        
+        /* Blog Posts Grid */
+        .posts-section {
+            margin-bottom: 60px;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #E0F2FE;
+        }
+        
+        .section-header h3 {
+            font-size: 24px;
+            color: #1A365D;
+        }
+        
+        .view-all {
+            color: #C85A54;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .post-card {
+            background: white;
+            border: 2px solid #E0F2FE;
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+        
+        .post-card:hover {
+            border-color: #C85A54;
+            box-shadow: 0 4px 12px rgba(26, 54, 93, 0.1);
+            transform: translateY(-4px);
+        }
+        
+        .post-category {
+            display: inline-block;
+            background: #FEF3E2;
+            color: #C85A54;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .post-card h4 {
+            font-size: 20px;
+            color: #1A365D;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .post-card h4 a {
+            color: #1A365D;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .post-card h4 a:hover {
+            color: #C85A54;
+        }
+        
+        .post-card .excerpt {
+            font-size: 15px;
+            color: #5B8BA0;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .post-card .post-meta {
+            font-size: 13px;
+            color: #5B8BA0;
+        }
+        
+        /* Newsletter Signup */
+        .newsletter-signup {
+            background: #FEF3E2;
+            padding: 50px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 60px;
+            border-left: 5px solid #C85A54;
+        }
+        
+        .newsletter-signup h3 {
+            font-size: 28px;
+            color: #1A365D;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-signup p {
+            font-size: 17px;
+            color: #5B8BA0;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .signup-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .signup-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid #E0F2FE;
+            border-radius: 6px;
+            font-size: 16px;
+            background: white;
+        }
+        
+        .signup-form input:focus {
+            outline: none;
+            border-color: #5B8BA0;
+        }
+        
+        .signup-form button {
+            background: #C85A54;
+            color: white;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .signup-form button:hover {
+            background: #B54A44;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1A365D;
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .footer-logo .business-name span {
+            color: white;
+            opacity: 0.9;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .blog-branding {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .divider {
+                display: none;
+            }
+            
+            .featured-post h2 {
+                font-size: 28px;
+            }
+            
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .signup-form {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="blog-branding">
+                    <div class="business-logo">
+                        <div class="logo-vertical">
+                            <div class="logo-square square1"></div>
+                            <div class="logo-square square2"></div>
+                            <div class="logo-square square3"></div>
+                        </div>
+                        <div class="business-name">
+                            <span>Anacortes</span>
+                            <span>Nonprofit</span>
+                            <span>Navigator</span>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="blog-title-section">
+                        <h1>Navigator's Log</h1>
+                        <p>Operational insights for mission-driven organizations</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Latest</a></li>
+                        <li><a href="#">Topics</a></li>
+                        <li><a href="#">Archive</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Featured Post -->
+            <article class="featured-post">
+                <span class="featured-label">Featured</span>
+                <h2>5 Signs Your Nonprofit Needs a CRM Upgrade</h2>
+                <div class="post-meta">January 12, 2025 • 6 min read</div>
+                <p class="excerpt">Is your donor database holding you back? Learn the warning signs that it's time to upgrade your CRM system and how to make the transition smooth for your team.</p>
+                <a href="#" class="read-more">Read Article</a>
+            </article>
+
+            <!-- Recent Posts -->
+            <section class="posts-section">
+                <div class="section-header">
+                    <h3>Recent Posts</h3>
+                    <a href="#" class="view-all">View All →</a>
+                </div>
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <span class="post-category">Tools & Tech</span>
+                        <h4><a href="#">Google Workspace vs Microsoft 365 for Small Nonprofits</a></h4>
+                        <p class="excerpt">A practical comparison of features, costs, and nonprofit benefits to help you choose the right platform.</p>
+                        <div class="post-meta">January 8, 2025 • 5 min read</div>
+                    </article>
+
+                    <article class="post-card">
+                        <span class="post-category">Best Practices</span>
+                        <h4><a href="#">Creating a File Naming System Your Team Will Actually Use</a></h4>
+                        <p class="excerpt">Simple strategies for organizing digital files that save time and reduce frustration.</p>
+                        <div class="post-meta">January 5, 2025 • 4 min read</div>
+                    </article>
+
+                    <article class="post-card">
+                        <span class="post-category">Security</span>
+                        <h4><a href="#">Nonprofit Cybersecurity Basics: What You Can't Afford to Ignore</a></h4>
+                        <p class="excerpt">Essential security practices for small nonprofits with limited IT resources.</p>
+                        <div class="post-meta">January 2, 2025 • 7 min read</div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Newsletter Signup -->
+            <section class="newsletter-signup">
+                <h3>Get Navigator's Log in Your Inbox</h3>
+                <p>Receive practical operational insights and tips for nonprofit leaders every month. No spam, just helpful guidance.</p>
+                <form class="signup-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </section>
+
+            <!-- More Posts by Category -->
+            <section class="posts-section">
+                <div class="section-header">
+                    <h3>Systems & Operations</h3>
+                    <a href="#" class="view-all">View All →</a>
+                </div>
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <span class="post-category">Operations</span>
+                        <h4><a href="#">Building Your First Standard Operating Procedure</a></h4>
+                        <p class="excerpt">A step-by-step guide to documenting processes that scale with your organization.</p>
+                        <div class="post-meta">December 28, 2024 • 6 min read</div>
+                    </article>
+
+                    <article class="post-card">
+                        <span class="post-category">Efficiency</span>
+                        <h4><a href="#">Automation Tools Every Small Nonprofit Should Consider</a></h4>
+                        <p class="excerpt">Free and low-cost automation options that can save your team hours each week.</p>
+                        <div class="post-meta">December 22, 2024 • 5 min read</div>
+                    </article>
+
+                    <article class="post-card">
+                        <span class="post-category">Planning</span>
+                        <h4><a href="#">The 3-Step Technology Assessment Framework</a></h4>
+                        <p class="excerpt">How to evaluate your current systems and prioritize improvements on a limited budget.</p>
+                        <div class="post-meta">December 18, 2024 • 8 min read</div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-vertical">
+                        <div class="logo-square square1"></div>
+                        <div class="logo-square square2"></div>
+                        <div class="logo-square square3"></div>
+                    </div>
+                    <div class="business-name">
+                        <span>Anacortes</span>
+                        <span>Nonprofit</span>
+                        <span>Navigator</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Main Website</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
