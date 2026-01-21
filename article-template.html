@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title - Navigator's Log</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2D3748;
+            line-height: 1.6;
+            background: #FFFFFF;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #FFFFFF;
+            padding: 30px 0;
+            border-bottom: 3px solid #1A365D;
+            margin-bottom: 40px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .blog-branding {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .business-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .logo-square {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+        }
+        
+        .square1 { background: #1A365D; }
+        .square2 { background: #C85A54; }
+        .square3 { background: #5B8BA0; }
+        
+        .business-name {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .business-name span {
+            font-size: 13px;
+            color: #1A365D;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .divider {
+            width: 2px;
+            height: 50px;
+            background: #E0F2FE;
+        }
+        
+        .blog-title-section h1 {
+            font-size: 32px;
+            color: #1A365D;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .blog-title-section h1 a {
+            color: #1A365D;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .blog-title-section h1 a:hover {
+            color: #C85A54;
+        }
+        
+        .blog-title-section p {
+            font-size: 14px;
+            color: #C85A54;
+            font-style: italic;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: #1A365D;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #C85A54;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            margin-bottom: 30px;
+        }
+        
+        .breadcrumb a {
+            color: #5B8BA0;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .breadcrumb a:hover {
+            color: #C85A54;
+        }
+        
+        .breadcrumb span {
+            color: #5B8BA0;
+            margin: 0 8px;
+        }
+        
+        /* Article Header */
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #E0F2FE;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: #FEF3E2;
+            color: #C85A54;
+            padding: 6px 16px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .article-header h1 {
+            font-size: 42px;
+            color: #1A365D;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            color: #5B8BA0;
+            font-size: 15px;
+        }
+        
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* Article Content */
+        .article-content {
+            max-width: 720px;
+            margin: 0 auto 60px;
+        }
+        
+        .article-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            color: #2D3748;
+        }
+        
+        .article-content h2 {
+            font-size: 32px;
+            color: #1A365D;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .article-content h3 {
+            font-size: 24px;
+            color: #1A365D;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+        
+        .article-content h4 {
+            font-size: 20px;
+            color: #1A365D;
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+        
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 24px;
+            padding-left: 30px;
+        }
+        
+        .article-content li {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #2D3748;
+        }
+        
+        .article-content blockquote {
+            background: #FEF3E2;
+            border-left: 5px solid #C85A54;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-size: 20px;
+            font-style: italic;
+            color: #1A365D;
+        }
+        
+        .article-content strong {
+            color: #1A365D;
+            font-weight: 600;
+        }
+        
+        .article-content a {
+            color: #C85A54;
+            text-decoration: underline;
+        }
+        
+        .article-content a:hover {
+            color: #B54A44;
+        }
+        
+        /* Callout Box */
+        .callout-box {
+            background: #E0F2FE;
+            border: 2px solid #5B8BA0;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        
+        .callout-box h3 {
+            color: #1A365D;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .callout-box p {
+            margin-bottom: 0;
+        }
+        
+        /* Key Takeaways */
+        .key-takeaways {
+            background: #FEF3E2;
+            border-left: 5px solid #C85A54;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+        
+        .key-takeaways h3 {
+            color: #1A365D;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .key-takeaways ul {
+            margin-bottom: 0;
+        }
+        
+        /* Article Footer */
+        .article-footer {
+            max-width: 720px;
+            margin: 60px auto;
+            padding-top: 40px;
+            border-top: 3px solid #E0F2FE;
+        }
+        
+        .share-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .share-section h3 {
+            color: #1A365D;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .share-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #5B8BA0;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .share-button:hover {
+            background: #1A365D;
+            transform: translateY(-2px);
+        }
+        
+        /* Author Bio */
+        .author-bio {
+            background: white;
+            border: 2px solid #E0F2FE;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .author-bio h3 {
+            color: #1A365D;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .author-bio p {
+            font-size: 16px;
+            color: #5B8BA0;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .author-bio a {
+            color: #C85A54;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .author-bio a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Related Posts */
+        .related-posts {
+            margin-bottom: 60px;
+        }
+        
+        .related-posts h3 {
+            color: #1A365D;
+            font-size: 24px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .related-card {
+            background: white;
+            border: 2px solid #E0F2FE;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+        
+        .related-card:hover {
+            border-color: #C85A54;
+            transform: translateY(-4px);
+        }
+        
+        .related-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .related-card h4 a {
+            color: #1A365D;
+            text-decoration: none;
+        }
+        
+        .related-card h4 a:hover {
+            color: #C85A54;
+        }
+        
+        .related-card .meta {
+            font-size: 13px;
+            color: #5B8BA0;
+        }
+        
+        /* Newsletter CTA */
+        .newsletter-cta {
+            background: linear-gradient(135deg, #1A365D 0%, #0F2C59 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .newsletter-cta h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-cta p {
+            font-size: 17px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+        
+        .signup-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .signup-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        
+        .signup-form button {
+            background: #C85A54;
+            color: white;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .signup-form button:hover {
+            background: #B54A44;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1A365D;
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .footer-logo .business-name span {
+            color: white;
+            opacity: 0.9;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .blog-branding {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .divider {
+                display: none;
+            }
+            
+            .article-header h1 {
+                font-size: 32px;
+            }
+            
+            .article-content h2 {
+                font-size: 26px;
+            }
+            
+            .article-content h3 {
+                font-size: 20px;
+            }
+            
+            .signup-form {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="blog-branding">
+                    <div class="business-logo">
+                        <div class="logo-vertical">
+                            <div class="logo-square square1"></div>
+                            <div class="logo-square square2"></div>
+                            <div class="logo-square square3"></div>
+                        </div>
+                        <div class="business-name">
+                            <span>Anacortes</span>
+                            <span>Nonprofit</span>
+                            <span>Navigator</span>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="blog-title-section">
+                        <h1><a href="#">Navigator's Log</a></h1>
+                        <p>Operational insights for mission-driven organizations</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Latest</a></li>
+                        <li><a href="#">Topics</a></li>
+                        <li><a href="#">Archive</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="#">Home</a>
+                <span>›</span>
+                <a href="#">Tools & Tech</a>
+                <span>›</span>
+                <span>Article Title</span>
+            </div>
+
+            <!-- Article Header -->
+            <div class="article-header">
+                <span class="article-category">Tools & Tech</span>
+                <h1>5 Signs Your Nonprofit Needs a CRM Upgrade</h1>
+                <div class="article-meta">
+                    <span>📅 January 12, 2025</span>
+                    <span>⏱ 6 min read</span>
+                    <span>✍️ Your Name</span>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <article class="article-content">
+                <!-- Introduction -->
+                <p>Your donor database should make your life easier, not harder. But if you're spending more time fighting with your CRM than actually using it to build relationships, it might be time for a change.</p>
+
+                <p>Here are five clear signs that your nonprofit is ready for a CRM upgrade—and what to do about it.</p>
+
+                <!-- Main Content Section -->
+                <h2>1. Your Team Avoids Using It</h2>
+                
+                <p>The most obvious sign of a failing CRM is when your staff actively avoids it. If team members are keeping donor information in spreadsheets, sticky notes, or their own personal files instead of the official system, you have a problem.</p>
+
+                <p>This usually happens because:</p>
+                <ul>
+                    <li>The system is too complicated or unintuitive</li>
+                    <li>It's too slow or crashes frequently</li>
+                    <li>The learning curve is too steep for new staff</li>
+                    <li>It doesn't match how your team actually works</li>
+                </ul>
+
+                <p><strong>What to do:</strong> Talk to your team about what frustrates them most. Their feedback will guide you toward features that actually matter for your workflow.</p>
+
+                <!-- Callout Box Example -->
+                <div class="callout-box">
+                    <h3>💡 Quick Tip</h3>
+                    <p>Before shopping for a new CRM, spend a week documenting how your team currently tracks donor information. This "shadow system" often reveals what features you actually need.</p>
+                </div>
+
+                <h2>2. You Can't Generate the Reports You Need</h2>
+                
+                <p>Your board asks for a breakdown of donor retention by campaign. Your development director needs to segment donors by giving history. Your executive director wants to see year-over-year trends.</p>
+
+                <p>And you can't easily produce any of these reports.</p>
+
+                <p>If generating basic reports requires manual exports, spreadsheet gymnastics, or waiting for an IT person to build custom queries, your CRM isn't serving you.</p>
+
+                <h3>Common Reporting Pain Points</h3>
+                <ul>
+                    <li>Can't segment donors by meaningful criteria</li>
+                    <li>Reports are hard to customize or schedule</li>
+                    <li>Data visualization is nonexistent or clunky</li>
+                    <li>Can't track donor journeys over time</li>
+                </ul>
+
+                <h2>3. Data Entry Takes Forever</h2>
+
+                <p>If entering a single donation takes five minutes and ten clicks, that's a problem. Modern CRMs should streamline data entry, not make it a chore.</p>
+
+                <blockquote>
+                    "We were spending 15 hours a week just entering donation data. After switching to a system with better automation, that dropped to 3 hours." — Local nonprofit director
+                </blockquote>
+
+                <p>Look for features like:</p>
+                <ul>
+                    <li>Automatic import from online donation platforms</li>
+                    <li>Batch entry for similar transactions</li>
+                    <li>Smart defaults that remember common entries</li>
+                    <li>Mobile data entry for events</li>
+                </ul>
+
+                <!-- Key Takeaways Box -->
+                <div class="key-takeaways">
+                    <h3>🎯 Key Takeaways</h3>
+                    <ul>
+                        <li>Your CRM should make work easier, not harder</li>
+                        <li>Team adoption is the best measure of system success</li>
+                        <li>Don't pay for features you'll never use</li>
+                        <li>Plan for migration time and training costs</li>
+                        <li>Start with your team's pain points, not vendor features</li>
+                    </ul>
+                </div>
+
+                <h2>4. Integration Is a Nightmare</h2>
+
+                <p>Your CRM doesn't talk to your accounting software. Your email platform can't pull donor lists. Your online donation form requires manual exports and imports.</p>
+
+                <p>Modern nonprofits use multiple tools, and they should work together seamlessly. If you're manually moving data between systems, you're wasting time and risking errors.</p>
+
+                <h2>5. You've Outgrown Your Current System</h2>
+
+                <p>Maybe your CRM worked great when you had 500 donors. But now you have 5,000, and the system is creaking under the load. Or you've added programs and services that don't fit the original structure.</p>
+
+                <p>Growth is good, but your systems need to grow with you.</p>
+
+                <h2>Making the Switch: What to Consider</h2>
+
+                <p>If you're seeing these signs, it's time to evaluate alternatives. But upgrading your CRM is a significant project. Here's what to think about:</p>
+
+                <h3>Budget Realistically</h3>
+                <p>Don't just look at subscription costs. Factor in:</p>
+                <ul>
+                    <li>Data migration expenses</li>
+                    <li>Staff training time</li>
+                    <li>Potential consultant fees</li>
+                    <li>Temporary productivity dip during transition</li>
+                </ul>
+
+                <h3>Prioritize Must-Have Features</h3>
+                <p>It's easy to get dazzled by bells and whistles. Focus on what you'll actually use daily. Create a tier system: must-have, nice-to-have, and don't-need.</p>
+
+                <h3>Plan for Migration</h3>
+                <p>Moving data from one system to another is rarely seamless. Clean your data before you migrate, not after. And expect that you might lose some historical detail in the process.</p>
+
+                <h2>Final Thoughts</h2>
+
+                <p>Your CRM should be a tool that empowers your mission, not an obstacle to overcome. If you're seeing multiple warning signs from this list, it's time to start evaluating options.</p>
+
+                <p>The right CRM won't solve all your problems, but it will give your team the foundation they need to build stronger donor relationships and focus on what matters: serving your community.</p>
+
+                <p><em>Need help evaluating CRM options for your organization? <a href="#">Reach out for a free consultation</a>.</em></p>
+            </article>
+
+            <!-- Article Footer -->
+            <div class="article-footer">
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3>Found this helpful? Share it!</h3>
+                    <div class="share-buttons">
+                        <a href="#" class="share-button">Share on LinkedIn</a>
+                        <a href="#" class="share-button">Share on Twitter</a>
+                        <a href="#" class="share-button">Email to a Friend</a>
+                    </div>
+                </div>
+
+                <!-- Author Bio -->
+                <div class="author-bio">
+                    <h3>About the Author</h3>
+                    <p>Your bio goes here. Share your background, expertise, and passion for helping nonprofits. Keep it conversational and authentic.</p>
+                    <p><a href="#">Learn more about working together →</a></p>
+                </div>
+
+                <!-- Related Posts -->
+                <div class="related-posts">
+                    <h3>Related Articles</h3>
+                    <div class="related-grid">
+                        <div class="related-card">
+                            <h4><a href="#">Google Workspace vs Microsoft 365 for Small Nonprofits</a></h4>
+                            <p class="meta">January 8, 2025 • 5 min read</p>
+                        </div>
+                        <div class="related-card">
+                            <h4><a href="#">The 3-Step Technology Assessment Framework</a></h4>
+                            <p class="meta">December 18, 2024 • 8 min read</p>
+                        </div>
+                        <div class="related-card">
+                            <h4><a href="#">Creating a File Naming System Your Team Will Actually Use</a></h4>
+                            <p class="meta">January 5, 2025 • 4 min read</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter CTA -->
+            <div class="newsletter-cta">
+                <h3>Get More Insights Like This</h3>
+                <p>Subscribe to Navigator's Log for monthly operational tips and nonprofit tech guidance delivered to your inbox.</p>
+                <form class="signup-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-vertical">
+                        <div class="logo-square square1"></div>
+                        <div class="logo-square square2"></div>
+                        <div class="logo-square square3"></div>
+                    </div>
+                    <div class="business-name">
+                        <span>Anacortes</span>
+                        <span>Nonprofit</span>
+                        <span>Navigator</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Main Website</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
