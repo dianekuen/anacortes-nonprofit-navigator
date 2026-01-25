@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article Title - Navigator's Log</title>
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Legacy fallback -->
+    <link rel="shortcut icon" href="favicon.ico">
     <style>
         * {
             margin: 0;
@@ -596,11 +600,12 @@
                     </div>
                 </div>
                 <nav>
-                    <ul>
-                        <li><a href="#">Latest</a></li>
-                        <li><a href="#">Topics</a></li>
-                        <li><a href="#">Archive</a></li>
-                        <li><a href="#">About</a></li>
+                    <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+                    <ul id="nav-menu">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <!-- <li><a href="services.html" class="nav-link">Services</a></li>-->
+                        <li><a href="about.html" class="nav-link">About Diane</a></li>
+                        <li><a href="nlog-20260124.html" class="nav-link">Navigator's Log</a></li>
                     </ul>
                 </nav>
             </div>
