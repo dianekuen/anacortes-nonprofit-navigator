@@ -703,6 +703,131 @@ main.about-page {
     font-weight: 700;
 }
 
+/* Archive / articles list in sidebar */
+.archive-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+
+.archive-list li {
+    margin-bottom: 10px;
+}
+
+.archive-list a {
+    color: #1A365D;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.archive-list a:hover {
+    color: #C85A54;
+    text-decoration: underline;
+}
+
+.archive .active-article {
+    color: #C85A54;
+}
+
+/* Desktop: make the archive card 'hover' over the author card */
+.about-sidebar {
+    padding-top: 20px;
+}
+
+.core-values.archive {
+    position: relative;
+    transform: none;
+    box-shadow: none;
+    margin-bottom: 18px;
+}
+
+/* Author bio shown at article bottom */
+.article-author-bio {
+    margin-top: 34px;
+    padding-top: 22px;
+    border-top: 3px solid #E0F2FE;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.article-author-bio .author-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.article-author-bio .bio-photo.small {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 8px 18px rgba(90, 130, 140, 0.12);
+}
+
+.article-author-bio .author-left .author-name {
+    margin: 0;
+    font-weight: 400;
+    font-style: normal;
+    color: #1A365D;
+    font-size: 16px;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.article-author-bio .author-left .author-role {
+    margin: 0;
+    font-style: italic;
+    color: #5B8BA0;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.article-author-bio .author-right h5 {
+    margin: 0 0 6px 0;
+    color: #1A365D;
+}
+
+.article-author-bio .author-right p {
+    margin: 0 0 8px 0;
+    color: #6B6B6B;
+}
+
+@media (max-width: 900px) {
+    .article-author-bio {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .article-author-bio .bio-photo.small {
+        width: 120px;
+        height: 120px;
+    }
+
+    .article-author-bio .author-left {
+        align-items: center;
+    }
+
+    .article-author-bio .author-right {
+        text-align: center;
+    }
+}
+
+/* Make the left column wider on desktop so name and role sit on separate lines */
+@media (min-width: 901px) {
+    .article-author-bio .author-left {
+        width: 200px;
+        min-width: 160px;
+        align-items: center;
+    }
+}
+
 
 /* Article Header */
 .article-header {
