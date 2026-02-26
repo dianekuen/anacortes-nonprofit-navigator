@@ -4,772 +4,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article Title - Navigator's Log</title>
+    <meta property="og:image" content="https://dianekuen.github.io/anacortes-nonprofit-navigator/cover_facebook.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <title>Navigator's Log — Anacortes Nonprofit Navigator</title>
+    <link rel="stylesheet" href="style.css">
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- Legacy fallback -->
     <link rel="shortcut icon" href="favicon.ico">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #2D3748;
-            line-height: 1.6;
-            background: #FFFFFF;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: #FFFFFF;
-            padding: 30px 0;
-            border-bottom: 3px solid #1A365D;
-            margin-bottom: 40px;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .blog-branding {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .business-logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-vertical {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .logo-square {
-            width: 16px;
-            height: 16px;
-            border-radius: 2px;
-        }
-
-        .square1 {
-            background: #1A365D;
-        }
-
-        .square2 {
-            background: #C85A54;
-        }
-
-        .square3 {
-            background: #5B8BA0;
-        }
-
-        .business-name {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .business-name span {
-            font-size: 13px;
-            color: #1A365D;
-            font-weight: 600;
-            line-height: 1.3;
-        }
-
-        .divider {
-            width: 2px;
-            height: 50px;
-            background: #E0F2FE;
-        }
-
-        .blog-title-section h1 {
-            font-size: 32px;
-            color: #1A365D;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .blog-title-section h1 a {
-            color: #1A365D;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .blog-title-section h1 a:hover {
-            color: #C85A54;
-        }
-
-        .blog-title-section p {
-            font-size: 14px;
-            color: #C85A54;
-            font-style: italic;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: #1A365D;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #C85A54;
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            margin-bottom: 30px;
-        }
-
-        .breadcrumb a {
-            color: #5B8BA0;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .breadcrumb a:hover {
-            color: #C85A54;
-        }
-
-        .breadcrumb span {
-            color: #5B8BA0;
-            margin: 0 8px;
-        }
-
-        /* Article Header */
-        .article-header {
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 3px solid #E0F2FE;
-        }
-
-        .article-category {
-            display: inline-block;
-            background: #FEF3E2;
-            color: #C85A54;
-            padding: 6px 16px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .article-header h1 {
-            font-size: 42px;
-            color: #1A365D;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            color: #5B8BA0;
-            font-size: 15px;
-        }
-
-        .article-meta span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* Article Content */
-        .article-content {
-            max-width: 720px;
-            margin: 0 auto 60px;
-        }
-
-        .article-content p {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 24px;
-            color: #2D3748;
-        }
-
-        .article-content h2 {
-            font-size: 32px;
-            color: #1A365D;
-            margin-top: 50px;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-
-        .article-content h3 {
-            font-size: 24px;
-            color: #1A365D;
-            margin-top: 40px;
-            margin-bottom: 16px;
-            line-height: 1.4;
-        }
-
-        .article-content h4 {
-            font-size: 20px;
-            color: #1A365D;
-            margin-top: 30px;
-            margin-bottom: 12px;
-        }
-
-        .article-content ul,
-        .article-content ol {
-            margin-bottom: 24px;
-            padding-left: 30px;
-        }
-
-        .article-content li {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 12px;
-            color: #2D3748;
-        }
-
-        .article-content blockquote {
-            background: #FEF3E2;
-            border-left: 5px solid #C85A54;
-            padding: 25px 30px;
-            margin: 30px 0;
-            font-size: 20px;
-            font-style: italic;
-            color: #1A365D;
-        }
-
-        .article-content strong {
-            color: #1A365D;
-            font-weight: 600;
-        }
-
-        .article-content a {
-            color: #C85A54;
-            text-decoration: underline;
-        }
-
-        .article-content a:hover {
-            color: #B54A44;
-        }
-
-        /* Callout Box */
-        .callout-box {
-            background: #E0F2FE;
-            border: 2px solid #5B8BA0;
-            border-radius: 8px;
-            padding: 30px;
-            margin: 40px 0;
-        }
-
-        .callout-box h3 {
-            color: #1A365D;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-
-        .callout-box p {
-            margin-bottom: 0;
-        }
-
-        /* Key Takeaways */
-        .key-takeaways {
-            background: #FEF3E2;
-            border-left: 5px solid #C85A54;
-            padding: 30px;
-            margin: 40px 0;
-            border-radius: 8px;
-        }
-
-        .key-takeaways h3 {
-            color: #1A365D;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .key-takeaways ul {
-            margin-bottom: 0;
-        }
-
-        /* Article Footer */
-        .article-footer {
-            max-width: 720px;
-            margin: 60px auto;
-            padding-top: 40px;
-            border-top: 3px solid #E0F2FE;
-        }
-
-        .share-section {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .share-section h3 {
-            color: #1A365D;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .share-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .share-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #5B8BA0;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .share-button:hover {
-            background: #1A365D;
-            transform: translateY(-2px);
-        }
-
-        /* Author Bio */
-        .author-bio {
-            background: white;
-            border: 2px solid #E0F2FE;
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 40px;
-        }
-
-        .author-bio h3 {
-            color: #1A365D;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .author-bio p {
-            font-size: 16px;
-            color: #5B8BA0;
-            margin-bottom: 15px;
-            line-height: 1.7;
-        }
-
-        .author-bio a {
-            color: #C85A54;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .author-bio a:hover {
-            text-decoration: underline;
-        }
-
-        /* Related Posts */
-        .related-posts {
-            margin-bottom: 60px;
-        }
-
-        .related-posts h3 {
-            color: #1A365D;
-            font-size: 24px;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .related-card {
-            background: white;
-            border: 2px solid #E0F2FE;
-            border-radius: 8px;
-            padding: 20px;
-            transition: all 0.3s;
-        }
-
-        .related-card:hover {
-            border-color: #C85A54;
-            transform: translateY(-4px);
-        }
-
-        .related-card h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .related-card h4 a {
-            color: #1A365D;
-            text-decoration: none;
-        }
-
-        .related-card h4 a:hover {
-            color: #C85A54;
-        }
-
-        .related-card .meta {
-            font-size: 13px;
-            color: #5B8BA0;
-        }
-
-        /* Newsletter CTA */
-        .newsletter-cta {
-            background: linear-gradient(135deg, #1A365D 0%, #0F2C59 100%);
-            color: white;
-            padding: 50px 40px;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .newsletter-cta h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        .newsletter-cta p {
-            font-size: 17px;
-            margin-bottom: 25px;
-            opacity: 0.95;
-        }
-
-        .signup-form {
-            display: flex;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .signup-form input {
-            flex: 1;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-        }
-
-        .signup-form button {
-            background: #C85A54;
-            color: white;
-            padding: 14px 35px;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .signup-form button:hover {
-            background: #B54A44;
-            transform: translateY(-2px);
-        }
-
-        /* Footer */
-        footer {
-            background: #1A365D;
-            color: white;
-            padding: 40px 0;
-            margin-top: 60px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .footer-logo .business-name span {
-            color: white;
-            opacity: 0.9;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.3s;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
-
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .blog-branding {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-            }
-
-            .divider {
-                display: none;
-            }
-
-            .article-header h1 {
-                font-size: 32px;
-            }
-
-            .article-content h2 {
-                font-size: 26px;
-            }
-
-            .article-content h3 {
-                font-size: 20px;
-            }
-
-            .signup-form {
-                flex-direction: column;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
-            <div class="header-content">
-                <div class="blog-branding">
-                    <div class="business-logo">
-                        <div class="logo-vertical">
-                            <div class="logo-square square1"></div>
-                            <div class="logo-square square2"></div>
-                            <div class="logo-square square3"></div>
-                        </div>
-                        <div class="business-name">
-                            <span>Anacortes</span>
-                            <span>Nonprofit</span>
-                            <span>Navigator</span>
-                        </div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="blog-title-section">
-                        <h1><a href="#">Navigator's Log</a></h1>
-                        <p>Operational insights for mission-driven organizations</p>
-                    </div>
+            <a href="index.html" class="logo">
+                <div class="logo-mark">
+                    <div class="logo-shape shape1"></div>
+                    <div class="logo-shape shape2"></div>
+                    <div class="logo-shape shape3"></div>
                 </div>
-                <nav>
-                    <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
-                    <ul id="nav-menu">
-                        <li><a href="index.html" class="nav-link active">Home</a></li>
-                        <!-- <li><a href="services.html" class="nav-link">Services</a></li>-->
-                        <li><a href="about.html" class="nav-link">About Diane</a></li>
-                        <li><a href="nlog-20260124.html" class="nav-link">Navigator's Log</a></li>
-                    </ul>
-                </nav>
-            </div>
+                <div class="logo-text">
+                    <h1>Navigator's Log</h1>
+                    <p class="tagline">Operational insights for mission-driven organizations</p>
+                </div>
+            </a>
+            <nav>
+                <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <!-- <li><a href="services.html" class="nav-link">Services</a></li>-->
+                    <li><a href="about.html" class="nav-link">Meet Diane</a></li>
+                    <li><a href="log.html" class="nav-link active">Navigator's Log</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
+    <main class="about">
         <div class="container">
-            <!-- Breadcrumb -->
-            <div class="breadcrumb">
-                <a href="index.html">Home</a>
-                <!--<span>›</span>
-                <a href="#">Tools & Tech</a>
-                <span>›</span>
-                <span>Article Title</span>-->
-            </div>
-
-            <!-- Article Header -->
-            <div class="article-header">
-                <span class="article-category">Donor Stewardship and Technology</span>
-                <h1>Donor Stewardship and Technology</h1>
-                <div class="article-meta">
-                    <span>📅 January 24, 2026</span>
-                    <span>⏱ 6 min read</span>
-                    <span>✍️ Diane Peterson</span>
-                </div>
-            </div>
-
-            <!-- Article Content -->
-            <article class="article-content">
-                <!-- Introduction -->
-                <p>Last year I went to AFP ICON (Association of Fundraising Professionals Conference) and one of the
-                    biggest takeaways was that the donor pyramid is looking more like an Eiffel tower than the pyramid.
-                    A small number of donors are doing all the heavy lifting, putting in billions of dollars into
-                    philanthropic causes. Meanwhile, the everyday donors are fewer and giving less. What does this tell
-                    us as fundraisers? We are not tapping into those smaller donors and will become too dependent on 1-2
-                    major donors to run our organization. When that donor’s funding ends, you will be left with a big
-                    gap to fill. </p>
-                <p>
-                    How do we diversify this risk? The answer is to engage the everyday donor in your mission. The way
-                    to do that is easier than you think. They are already participating in your organization in some
-                    fashion. Identifying them and stewarding that relationship is the task at hand. We are talking about
-                    the volunteers, the board members, the spouse that gave from their DAF, and the business owner that
-                    sponsored your event. These are all transactions that may not be captured and contributed to the
-                    correct individual. Or they are captured but on a variety of platforms. </p>
-                <p>
-                    This article <a
-                        href="https://www.philanthropy.com/news/taming-tech-chaos-in-the-back-office/?_hsenc=p2ANqtz--eMuK0Qitrp7ZkiQWlYat4p1SbcbFnzpvcmy-8Tt5KBRYa1NWHomk4hTzj7L8sWxpxfQ9rQYm7-MAgKLL4z_OMFfqO1Q&_hsmi=398920408">Taming
-                        Tech Chaos in the Back Office</a> is spot on in regards to the plethora of platforms
-                    created to make it easier for donors to give but creates chaos for the nonprofit back office to sort
-                    through the data. Online donations via QR codes makes it so easy for the donor. It captures the
-                    donor name (auto-filled), and credit card info (from the payment app) and the money gets deposited
-                    to your bank. Now you are figuring out who that person is and entering them manually into your main
-                    database. A slightly more thoughtful approach might include an import/export functionality that gets
-                    the information from one system to the other. Nonetheless, back office manual entry is unavoidable.
-                    How about the ACH payment from a financial institution? Are you spending the time to track down the
-                    donor who initiated that transaction?</p>
-                <p>
-                    The article does not provide a solution, rather it hopes more technology will solve the problem
-                    eventually. And everyday, more technology is being built and targeted to nonprofit leaders! There
-                    are so many ‘solutions’ out there that create integrations between the various platforms and now we
-                    are filtering through them only to find ourselves with more technology. How do we tackle this
-                    problem when all we want to do is serve our mission and the causes that are so dear to our hearts?
-                </p>
-                <p>
-                    The answer is not more apps. Donor stewardship is about relationships and all the technology in the
-                    world cannot build those relationships. People build relationships. Technology, however, can capture
-                    data, analyze it, create reports, and even make predictions so we can focus on the human work of
-                    relationship building. </p>
-                <p>
-                    One of the challenges in the nonprofit sector is high staff turnover. People in this field are
-                    passionate, but often overworked and underpaid. How can you steward a relationship when the people
-                    keep changing? Choosing a technology solution that fits your needs and creating clear processes to
-                    ensure data integrity is a good place to start. </p>
-                <p>
-                    Data is king! But it is also a case of garbage in, garbage out. Knowing which information matters
-                    and ensuring it is captured correctly helps protect relationships during staff transition. When the
-                    development director leaves, the donor relationship doesn’t have to leave with them. A good system
-                    captures historical context so the next nonprofit leader can continue the relationship with an
-                    understanding of past conversations. A good system also aggregates the information so you understand
-                    the individual as a whole. Infrastructure matters. Picking a system that fits the organizational
-                    needs and will actually be used by staff and volunteers is key.</p>
-                <p>
-                    With good data, you can analyze the reports to craft the ‘ask’, create meaningful touch points, and
-                    engage those everyday ‘donors’ at their level. That consistent volunteer may become your next big
-                    donor. Are you capturing that data and stewarding that relationship? Do you have the infrastructure
-                    in place to easily onboard new staff/volunteers to help with fundraising? Are you using the right
-                    tools for the purposes they are designed for? </p>
-                <p>
-                    Review how you track the data on people who care about your mission, not just those who give money,
-                    but those who give their time, expertise, and advocacy. Streamlining these processes to ensure the
-                    integrity of your data is an investment that strengthens donor relationships while mitigating the
-                    loss of institutional knowledge during staff turnover.
-                </p>
-            </article>
-
-            <!-- Article Footer -->
-            <div class="article-footer">
-                <!-- Share Section -->
-                <div class="share-section">
-                    <h3>Found this helpful? Share it!</h3>
-                    <div class="share-buttons">
-                        <a href="#" class="share-button">Share on LinkedIn</a>
-                        <a href="#" class="share-button">Share on Twitter</a>
-                        <a href="#" class="share-button">Email to a Friend</a>
-                    </div>
-                </div>
-
-                <!-- Author Bio -->
-                <div class="author-bio">
-                    <h3>About the Author</h3>
-                    <p>Your bio goes here. Share your background, expertise, and passion for helping nonprofits. Keep it
-                        conversational and authentic.</p>
-                    <p><a href="#">Learn more about working together →</a></p>
-                </div>
-
-                <!-- Related Posts -->
-                <div class="related-posts">
-                    <h3>Related Articles</h3>
-                    <div class="related-grid">
-                        <div class="related-card">
-                            <h4><a href="#">Google Workspace vs Microsoft 365 for Small Nonprofits</a></h4>
-                            <p class="meta">January 8, 2025 • 5 min read</p>
-                        </div>
-                        <div class="related-card">
-                            <h4><a href="#">The 3-Step Technology Assessment Framework</a></h4>
-                            <p class="meta">December 18, 2024 • 8 min read</p>
-                        </div>
-                        <div class="related-card">
-                            <h4><a href="#">Creating a File Naming System Your Team Will Actually Use</a></h4>
-                            <p class="meta">January 5, 2025 • 4 min read</p>
+            <h2 class="section-title">A Journey with Anacortes Nonprofit Navigator</h2>
+            <div class="about-grid">
+                <div class="about-main">
+                    <div class="article-header">
+                        <span class="article-category">Donor Stewardship</span>
+                        <h2>Stewardship of Everyday Donors</h2>
+                        <div class="article-meta">
+                            <span>📅 January 24, 2026</span>
+                            <span>⏱ 6 min read</span>
+                            <span>✍️ Diane Peterson</span>
                         </div>
                     </div>
+                    <!-- Article Content -->
+                    <article class="article-content">
+
+                        <h3>The Shifting Donor Landscape</h3>
+                        <p>Last year I went to <a href="https://afpglobal.org/afp-icon/past-conferences">AFP ICON
+                                2025</a> in Seattle and
+                            one of the
+                            biggest takeaways was that the donor pyramid is looking more like an Eiffel tower than the
+                            pyramid. A small number of donors are doing all the heavy lifting, putting in billions of
+                            dollars into philanthropic causes. Meanwhile, the everyday donors are fewer and giving less.
+                            What does this tell us as fundraisers? We are not tapping into those smaller donors and will
+                            become too dependent on 1-2 major donors to run our organization. When that donor’s funding
+                            ends, you will be left with a big gap to fill.</p>
+
+                        <h3>Diversifying Risk</h3>
+                        <p>How do we diversify this risk? The answer is to engage the everyday donor in your mission.
+                            The way
+                            to do that is easier than you think. They are already participating in your organization in
+                            some
+                            fashion. Identifying them and stewarding that relationship is the task at hand. We are
+                            talking
+                            about the volunteers, the board members, the spouse that gave from their DAF, and the
+                            business owner
+                            that sponsored your event. These are all transactions that may not be captured and
+                            contributed to
+                            the correct individual. Or they are captured but on a variety of platforms.</p>
+
+                        <h3>The Challenge of Tech Chaos</h3>
+                        <p>This article <a
+                                href="https://www.philanthropy.com/news/taming-tech-chaos-in-the-back-office/?_hsenc=p2ANqtz--eMuK0Qitrp7ZkiQWlYat4p1SbcbFnzpvcmy-8Tt5KBRYa1NWHomk4hTzj7L8sWxpxfQ9rQYm7-MAgKLL4z_OMFfqO1Q&_hsmi=398920408">Taming
+                                Tech Chaos in the Back Office</a> is spot on in regards to the plethora of platforms
+                            created to
+                            make it easier for donors to give but creates chaos for the nonprofit back office to sort
+                            through
+                            the data. Online donations via QR codes makes it so easy for the donor. It captures the
+                            donor name
+                            (auto-filled), and credit card info (from the payment app) and the money gets deposited to
+                            your
+                            bank. Now you are figuring out who that person is and entering them manually into your main
+                            database. A slightly more thoughtful approach might include an import/export functionality
+                            that
+                            gets the information from one system to the other. Nonetheless, back office manual entry is
+                            unavoidable. How about the ACH payment from a financial institution? Are you spending the
+                            time to
+                            track down the donor who initiated that transaction?</p>
+                        <p>The article does not provide a solution, rather it hopes more technology will solve the
+                            problem
+                            eventually. And everyday, more technology is being built and targeted to nonprofit leaders!
+                            There
+                            are so many ‘solutions’ out there that create integrations between the various platforms and
+                            now we
+                            are filtering through them only to find ourselves with more technology. How do we tackle
+                            this
+                            problem when all we want to do is serve our mission and the causes that are so dear to our
+                            hearts?
+                        </p>
+                        <h3>Relationships, Not Apps</h3>
+                        <p>The answer is not more apps. Donor stewardship is about relationships and all the technology
+                            in the
+                            world cannot build those relationships. People build relationships. Technology, however, can
+                            capture data, analyze it, create reports, and even make predictions so we can focus on the
+                            human
+                            work of relationship building.</p>
+
+                        <p>One of the challenges in the nonprofit sector is high staff turnover. People in this field
+                            are
+                            passionate, but often overworked and underpaid. How can you steward a relationship when the
+                            people
+                            keep changing? Choosing a technology solution that fits your needs and creating clear
+                            processes to
+                            ensure data integrity is a good place to start.</p>
+                        <h3>Building Resilient Infrastructure</h3>
+                        <p>Data is king! But it is also a case of garbage in, garbage out. Knowing which information
+                            matters and
+                            ensuring it is captured correctly helps protect relationships during staff transition. When
+                            the
+                            development director leaves, the donor relationship doesn’t have to leave with them. A good
+                            system
+                            captures historical context so the next nonprofit leader can continue the relationship with
+                            an
+                            understanding of past conversations. A good system also aggregates the information so you
+                            understand the individual as a whole. It can identify that recurring donor giving to your
+                            cause over
+                            the course of 10 years. Maybe only $50 each time but that consistency shows loyalty.
+                            Recognizing and
+                            celebrating that relationship is stewardship. </p>
+                        <p>Infrastructure matters. Picking a system that fits the organizational needs and will actually
+                            be used
+                            by staff and volunteers is key. With good data, you can analyze the reports to craft the
+                            ‘ask’,
+                            create meaningful touch points, and engage those everyday ‘donors’ at their level. That
+                            consistent
+                            volunteer may become your next big donor. Are you capturing that data and stewarding that
+                            relationship? Do you have the infrastructure in place to easily onboard new staff/volunteers
+                            to
+                            help with fundraising? Are you using the right tools for the purposes they are designed for?
+                        </p>
+                        <h3>Take Action!</h3>
+                        <p>Review how you track the data on people who care about your mission, not just those who give
+                            money,
+                            but those who give their time, expertise, and advocacy. Streamlining these processes to
+                            ensure the
+                            integrity of your data is an investment that strengthens donor relationships while
+                            mitigating the
+                            loss of institutional knowledge during staff turnover.</p>
+                    </article>
+
+                    <!-- Author bio moved to the bottom of the article (site-wide convention) -->
+                    <div class="article-author-bio">
+                        <div class="author-left">
+                            <img class="bio-photo small" aria-hidden="true" src="DianePeterson.jpg"
+                                alt="Diane Peterson">
+                            <div class="author-name">Diane Peterson</div>
+                            <div class="author-role">Founder &amp; Principal Consultant</div>
+                        </div>
+                        <div class="author-right">
+                            <h5>About the Author</h5>
+                            <p>Diane founded Anacortes Nonprofit Navigator to help nonprofit leaders streamline their
+                                operations so they can focus on their mission. She holds a B.S. in Computer Science and
+                                an MBA, and has volunteered and worked in the nonprofit sector for over 10 years.
+                                Through her writing, she hopes to inform and inspire others while documenting her own
+                                growth navigating the sector.</p>
+                        </div>
+                    </div>
+
                 </div>
+
+                <aside class="about-sidebar article-sidebar log-author">
+                    <div class="core-values archive">
+                        <h4>Articles</h4>
+                        <ul class="archive-list">
+                            <li><a class="active-article" href="nlog-20260124.html">Jan 24, 2026 — Stewardship of
+                                    Everyday
+                                    Donors</a></li>
+                            <li><a href="nlog-20260226.html">Feb 26, 2026 — The Hidden Cost of "Set It and Forget It":
+                                    Why Your Nonprofit Needs a Tech Audit</a></li>
+                        </ul>
+                        <p style="font-size:13px;color:#6B6B6B;margin-top:8px;">Archive by month — one article per month
+                            planned.</p>
+                    </div>
+                </aside>
             </div>
 
-            <!-- Newsletter CTA -->
-            <div class="newsletter-cta">
-                <h3>Get More Insights Like This</h3>
-                <p>Subscribe to Navigator's Log for monthly operational tips and nonprofit tech guidance delivered to
-                    your inbox.</p>
-                <form class="signup-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="logo_stacked.svg" alt="Anacortes Nonprofit Navigator Logo" width="32" height="32" />
-                </div>
-                <div class="footer-links">
-                    <p>&copy; 2026 Anacortes Nonprofit Navigator. Serving nonprofits in Anacortes and
-                        beyond.</p>
-                </div>
-            </div>
+            <p>&copy; 2026 Anacortes Nonprofit Navigator. Serving nonprofits in Anacortes and beyond.</p>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('nav-menu');
+            if (menu) menu.classList.toggle('show');
+        }
+    </script>
 </body>
 
 </html>

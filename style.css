@@ -926,10 +926,54 @@ main.about-page {
 }
 
 .article-content h4 {
-    font-size: 20px;
+    font-size: 18px;
+    color: #5B8BA0;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+/* Article Callout Box */
+.article-content .callout-box {
+    background: #E0F2FE;
+    border: 2px solid #5B8BA0;
+    border-radius: 8px;
+    padding: 30px;
+    margin: 20px 0;
+}
+
+.article-content .callout-box h4 {
     color: #1A365D;
-    margin-top: 30px;
-    margin-bottom: 12px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.article-content .callout-box p {
+    margin-bottom: 0;
+}
+
+/* Article Key Takeaways */
+.article-content .key-takeaways {
+    background: #FEF3E2;
+    border-left: 5px solid #C85A54;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.article-content .key-takeaways h4 {
+    color: #C85A54;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.article-content .key-takeaways ul {
+    margin-bottom: 0;
+}
+
+.article-content .key-takeaways ol {
+    margin-bottom: 0;
 }
 
 .article-content ul,
@@ -967,6 +1011,13 @@ main.about-page {
 
 .article-content a:hover {
     color: #B54A44;
+}
+
+.article-content img {
+    width: 300px;
+    float: left;
+    margin: 0 20px 20px 0;
+    border-radius: 8px;
 }
 
 @media (max-width: 900px) {
