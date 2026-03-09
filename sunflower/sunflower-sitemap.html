@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunflower F.U.N.D. — Sitemap Redesign</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ukraine-blue: #005BBB;
+      --ukraine-yellow: #FFD700;
+      --deep-blue: #002147;
+      --warm-white: #FAFAF7;
+      --mid-gray: #6B7280;
+      --light-border: #E5E7EB;
+      --green: #16A34A;
+      --amber: #D97706;
+      --red: #DC2626;
+      --nav-bg: #EEF2FF;
+      --footer-bg: #F3F4F6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm-white);
+      color: var(--deep-blue);
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--deep-blue);
+      color: white;
+      padding: 2.5rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '🌻';
+      position: absolute;
+      right: 2rem;
+      top: 1rem;
+      font-size: 5rem;
+      opacity: 0.12;
+    }
+
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+
+    header h1 span {
+      color: var(--ukraine-yellow);
+    }
+
+    header p {
+      margin-top: 0.4rem;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* SECTION LABELS */
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      color: var(--deep-blue);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--ukraine-yellow);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* COMPARISON LEGEND */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      background: white;
+      border: 1px solid var(--light-border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--mid-gray);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-nav {
+      background: var(--ukraine-blue);
+    }
+
+    .dot-sub {
+      background: #7C3AED;
+    }
+
+    .dot-footer {
+      background: var(--mid-gray);
+    }
+
+    .dot-removed {
+      background: var(--red);
+    }
+
+    .dot-merged {
+      background: var(--amber);
+    }
+
+    .dot-new {
+      background: var(--green);
+    }
+
+    /* SIDE-BY-SIDE PANELS */
+    .panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 700px) {
+      .panels {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .panel {
+      background: white;
+      border: 1px solid var(--light-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      padding: 0.9rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .panel-header.current {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .panel-header.proposed {
+      background: #DBEAFE;
+      color: #1E40AF;
+    }
+
+    .panel-body {
+      padding: 1.25rem;
+    }
+
+    /* NAV TREE */
+    .nav-group {
+      margin-bottom: 1rem;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 0.3rem 0;
+    }
+
+    .nav-label {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--deep-blue);
+    }
+
+    .nav-label.top {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ukraine-blue);
+      border-left: 3px solid var(--ukraine-blue);
+      padding-left: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .nav-label.footer-item {
+      color: var(--mid-gray);
+      font-style: italic;
+    }
+
+    .sub-items {
+      padding-left: 1.2rem;
+      border-left: 1px dashed #CBD5E1;
+      margin-left: 0.3rem;
+    }
+
+    .sub-item {
+      font-size: 0.83rem;
+      color: #374151;
+      padding: 0.18rem 0 0.18rem 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* BADGES */
+    .badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .badge-new {
+      background: #D1FAE5;
+      color: #065F46;
+    }
+
+    .badge-merged {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .badge-footer {
+      background: #F3F4F6;
+      color: #4B5563;
+    }
+
+    .badge-removed {
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+
+    .badge-cta {
+      background: #DBEAFE;
+      color: #1E40AF;
+    }
+
+    /* PROBLEMS / RATIONALE */
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .note-card {
+      background: white;
+      border: 1px solid var(--light-border);
+      border-radius: 10px;
+      padding: 1.1rem;
+    }
+
+    .note-card h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .note-card p,
+    .note-card li {
+      font-size: 0.82rem;
+      color: #4B5563;
+      line-height: 1.5;
+    }
+
+    .note-card ul {
+      padding-left: 1rem;
+    }
+
+    .note-card li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* FULL PROPOSED SITEMAP */
+    .sitemap-section {
+      margin-bottom: 3rem;
+    }
+
+    .sitemap-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--light-border);
+    }
+
+    .sitemap-row:first-child {
+      border-top: 1px solid var(--light-border);
+    }
+
+    .sitemap-nav-col {
+      background: var(--nav-bg);
+      padding: 1rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--ukraine-blue);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      border-right: 1px solid var(--light-border);
+    }
+
+    .sitemap-sub-col {
+      padding: 0.75rem 1.25rem;
+    }
+
+    .sitemap-sub-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: white;
+      border: 1px solid var(--light-border);
+      border-radius: 6px;
+      padding: 0.3rem 0.65rem;
+      font-size: 0.8rem;
+      margin: 0.2rem;
+      color: #1F2937;
+    }
+
+    .sitemap-sub-item.new {
+      border-color: #6EE7B7;
+      background: #F0FDF4;
+    }
+
+    .sitemap-sub-item.merged {
+      border-color: #FCD34D;
+      background: #FFFBEB;
+    }
+
+    /* FOOTER SECTION */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col {
+      background: white;
+      border: 1px solid var(--light-border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .footer-col-header {
+      background: var(--footer-bg);
+      padding: 0.65rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--mid-gray);
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0.75rem 1rem;
+    }
+
+    .footer-col li {
+      font-size: 0.82rem;
+      color: #374151;
+      padding: 0.22rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* UTILITY NAV */
+    .utility-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 3rem;
+    }
+
+    .utility-item {
+      background: var(--deep-blue);
+      color: white;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .utility-item.cta {
+      background: var(--ukraine-yellow);
+      color: var(--deep-blue);
+    }
+
+    /* SUMMARY TABLE */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 3rem;
+      background: white;
+      border: 1px solid var(--light-border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th {
+      background: var(--deep-blue);
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+
+    td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--light-border);
+      color: #374151;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: #F9FAFB;
+    }
+
+    .icon {
+      font-size: 1rem;
+    }
+
+    hr-section {
+      display: block;
+      height: 1px;
+      background: var(--light-border);
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🌻 <span>Sunflower F.U.N.D.</span> — Sitemap Redesign</h1>
+    <p>Proposed information architecture following nonprofit web best practices</p>
+  </header>
+
+  <div class="container">
+
+    <!-- LEGEND -->
+    <div style="margin-bottom:2rem;margin-top:1.5rem;">
+      <div class="legend">
+        <div class="legend-item">
+          <div class="dot dot-nav"></div> Main Nav (L1)
+        </div>
+        <div class="legend-item">
+          <div class="dot dot-sub"></div> Dropdown (L2)
+        </div>
+        <div class="legend-item">
+          <div class="dot dot-footer"></div> Footer link
+        </div>
+        <div class="legend-item">
+          <div class="dot dot-new"></div> New / consolidated page
+        </div>
+        <div class="legend-item">
+          <div class="dot dot-merged"></div> Merged / renamed
+        </div>
+        <div class="legend-item">
+          <div class="dot dot-removed"></div> Removed from nav
+        </div>
+      </div>
+    </div>
+
+    <!-- PROBLEMS WITH CURRENT NAV -->
+    <div class="section-title"><span>⚠️</span> What's Wrong With the Current Navigation</div>
+    <div class="notes-grid">
+      <div class="note-card">
+        <h4>🗂️ Too Many Top-Level Items</h4>
+        <p>The current nav has 8+ top-level entries (About Us, Financials, Boots on the Ground, In the News, Events,
+          Supporters, Blog, Shop, Donate) — best practice for nonprofits is 5–6 max.</p>
+      </div>
+      <div class="note-card">
+        <h4>📰 "In the News" Floods the Nav</h4>
+        <p>25+ individual press clips are listed directly as nav items. This is navigation, not a content archive. These
+          should live on a single Press page.</p>
+      </div>
+      <div class="note-card">
+        <h4>🤝 "Supporters" Needs a Home</h4>
+        <p>Sponsors and community organizations belong under a broader "Get Involved" or "Community" umbrella that also
+          includes volunteer and contact options.</p>
+      </div>
+      <div class="note-card">
+        <h4>💰 Financials Split Confusingly</h4>
+        <p>"Financials," "Donation Tracker," and "How It Works" are separate items but all relate to transparency and
+          trust — they should be unified.</p>
+      </div>
+      <div class="note-card">
+        <h4>🛒 Shop & Contact are Orphaned</h4>
+        <p>Contact and Shop appear at the top level when they're supporting items. Shop could live under Get Involved;
+          Contact belongs in the footer and utility nav.</p>
+      </div>
+      <div class="note-card">
+        <h4>📣 No Clear Calls to Action</h4>
+        <p>Donate appears twice in the nav but there's no visual hierarchy. A sticky utility bar with Donate + Contact
+          is the nonprofit standard.</p>
+      </div>
+    </div>
+
+    <!-- SIDE BY SIDE COMPARISON -->
+    <div class="section-title"><span>🔄</span> Before vs. After</div>
+    <div class="panels">
+      <div class="panel">
+        <div class="panel-header current">⚠️ Current Navigation (Problem Areas)</div>
+        <div class="panel-body">
+          <div class="nav-group">
+            <div class="nav-item">
+              <div class="nav-label top">About Us</div>
+            </div>
+          </div>
+          <div class="nav-group">
+            <div class="nav-item">
+              <div class="nav-label top">Financials</div><span class="badge badge-merged">too thin</span>
+            </div>
+            <div class="sub-items">
+              <div class="sub-item">Donation Tracker</div>
+              <div class="sub-item">How It Works</div>
+            </div>
+          </div>
+          <div class="nav-group">
+            <div class="nav-item">
+              <div class="nav-label top">Boots on the Ground</div>
+            </div>
+            <div class="sub-items">
+              <div class="sub-item">Women & Children's Shelter</div>
+              <div class="sub-item">Evacuation &amp; Humanitarian Relief</div>
+              <div class="sub-item">Armed Forces &amp; Territorial Defense Aid</div>
+              <div class="sub-item">War Crimes Investigation Center</div>
+              <div class="sub-item">Partner Criteria</div>
+              <div class="sub-item">Resilience</div>
+            </div>
+          </div>
+          <div class="nav-group">
+            <div class="nav-item">
+              <div class="nav-label top">In the News</div><span class="badge badge-removed">25 nav items!</span>
+            </div>
+            <div class="sub-items">
+              <div class="sub-item">25 individual press articles listed as nav items…</div>
+            </div>
+          </div>
+          <div class="nav-group">
+            <div class="nav-item">
+              <div class="nav-label top">Events</div>
+            </div>
+            <div class="sub-items">
+              <div class="sub-item">Film</div>
+              <div class="sub-item">Presentations</div>
+              <div class="sub-item">Annual Fundraiser</div>
+            </div>
+          </div>
+          <div class="nav-group">
+            <div class="nav-item">
+              <div class="nav-label top">Supporters</div><span class="badge badge-merged">under-grouped</span>
+            </div>
+            <div class="sub-items">
+              <div class="sub-item">Sponsors</div>
+              <div class="sub-item">Community Organizations</div>
+            </div>
+          </div>
+          <div class="nav-group">
+            <div class="nav-item">
+              <div class="nav-label top">Contact</div><span class="badge badge-footer">→ footer</span>
+            </div>
+            <div class="nav-item">
+              <div class="nav-label top">Shop</div><span class="badge badge-merged">orphaned</span>
+            </div>
+            <div class="nav-item">
+              <div class="nav-label top">Blog</div><span class="badge badge-merged">orphaned</span>
+            </div>
+            <div class="nav-item">
+              <div class="nav-label top">Donate</div><span class="badge badge-cta">duplicated CTA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header proposed">✅ Proposed Navigation (5 items)</div>
+        <div class="panel-body">
+          <div class="nav-group">
+            <div class="nav-item">
+              <div class="nav-label top">About</div>
+            </div>
+            <div class="sub-items">
+              <div class="sub-item">Our Story &amp; Mission</div>
+              <div class="sub-item">Board &amp; Team</div>
+              <div class="sub-item">How It Works <span class="badge badge-merged">moved</span></div>
+              <div class="sub-item">Donation Tracker <span class="badge badge-merged">moved</span></div>
+            </div>
+          </div>
+          <div class="nav-group">
+            <div class="nav-item">
+              <div class="nav-label top">Our Work</div><span class="badge badge-new">renamed</span>
+            </div>
+            <div class="sub-items">
+              <div class="sub-item">Women &amp; Children's Shelter</div>
+              <div class="sub-item">Evacuation &amp; Humanitarian Relief</div>
+              <div class="sub-item">Armed Forces &amp; Defense Aid</div>
+              <div class="sub-item">War Crimes Investigation</div>
+              <div class="sub-item">Partner Criteria</div>
+              <div class="sub-item">Resilience Stories <span class="badge badge-merged">renamed</span></div>
+            </div>
+          </div>
+          <div class="nav-group">
+            <div class="nav-item">
+              <div class="nav-label top">News &amp; Events</div><span class="badge badge-new">consolidated</span>
+            </div>
+            <div class="sub-items">
+              <div class="sub-item">Upcoming Events</div><span class="badge badge-merged">merged</span>
+              <div class="sub-item">Press Coverage <span class="badge badge-new">1 archive page</span></div>
+              <div class="sub-item">Blog</div>
+              <div class="sub-item">Annual Fundraiser</div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-group">
+          <div class="nav-item">
+            <div class="nav-label top">Get Involved</div><span class="badge badge-new">new group</span>
+          </div>
+          <div class="sub-items">
+            <div class="sub-item">Donate</div>
+            <div class="sub-item">Shop <span class="badge badge-merged">moved</span></div>
+            <div class="sub-item">Sponsors &amp; Partners <span class="badge badge-merged">merged</span></div>
+            <div class="sub-item">Community Organizations <span class="badge badge-merged">moved</span></div>
+            <div class="sub-item">Volunteer <span class="badge badge-new">new</span></div>
+          </div>
+        </div>
+        <div style="margin-top:1rem; padding-top:0.75rem; border-top:1px dashed #CBD5E1;">
+          <div
+            style="font-size:0.78rem;font-weight:600;color:var(--mid-gray);text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.4rem;">
+            Utility Bar (persistent, top-right)</div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <span class="badge badge-cta" style="font-size:0.75rem;padding:0.25rem 0.6rem;">🟡 DONATE</span>
+            <span class="badge badge-footer" style="font-size:0.75rem;padding:0.25rem 0.6rem;">Contact</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FULL SITEMAP TABLE -->
+  <div class="section-title"><span>🗺️</span> Full Proposed Sitemap</div>
+  <div class="sitemap-section">
+    <div class="sitemap-row">
+      <div class="sitemap-nav-col">🏠 Home</div>
+      <div class="sitemap-sub-col">
+        <span class="sitemap-sub-item">Homepage (Mission, Stats, CTA, Featured Stories)</span>
+      </div>
+    </div>
+    <div class="sitemap-row">
+      <div class="sitemap-nav-col">👤 About</div>
+      <div class="sitemap-sub-col">
+        <span class="sitemap-sub-item merged">Our Story &amp; Mission</span>
+        <span class="sitemap-sub-item merged">Board &amp; Team</span>
+        <span class="sitemap-sub-item merged">How It Works</span>
+        <span class="sitemap-sub-item new">Financials &amp; Transparency</span>
+        <span class="sitemap-sub-item merged">Donation Tracker</span>
+      </div>
+    </div>
+    <div class="sitemap-row">
+      <div class="sitemap-nav-col">💛 Our Work</div>
+      <div class="sitemap-sub-col">
+        <span class="sitemap-sub-item">Women &amp; Children's Shelter</span>
+        <span class="sitemap-sub-item">Evacuation &amp; Humanitarian Relief</span>
+        <span class="sitemap-sub-item">Armed Forces &amp; Defense Aid</span>
+        <span class="sitemap-sub-item">War Crimes Investigation</span>
+        <span class="sitemap-sub-item">Partner Criteria</span>
+        <span class="sitemap-sub-item merged">Resilience Stories</span>
+      </div>
+    </div>
+    <div class="sitemap-row">
+      <div class="sitemap-nav-col">📰 News &amp; Stories</div>
+      <div class="sitemap-sub-col">
+        <span class="sitemap-sub-item new">Press Coverage (archive page)</span>
+        <span class="sitemap-sub-item merged">Blog</span>
+        <span class="sitemap-sub-item new">Field Dispatches</span>
+      </div>
+    </div>
+    <div class="sitemap-row">
+      <div class="sitemap-nav-col">📅 Events</div>
+      <div class="sitemap-sub-col">
+        <span class="sitemap-sub-item new">Upcoming Events (hub)</span>
+        <span class="sitemap-sub-item">Film Screenings</span>
+        <span class="sitemap-sub-item">Presentations</span>
+        <span class="sitemap-sub-item">Annual Fundraiser</span>
+      </div>
+    </div>
+    <div class="sitemap-row">
+      <div class="sitemap-nav-col">🤝 Get Involved</div>
+      <div class="sitemap-sub-col">
+        <span class="sitemap-sub-item">Donate</span>
+        <span class="sitemap-sub-item merged">Shop</span>
+        <span class="sitemap-sub-item new">Sponsors &amp; Partners</span>
+        <span class="sitemap-sub-item merged">Community Organizations</span>
+        <span class="sitemap-sub-item new">Volunteer</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="section-title"><span>🦶</span> Recommended Footer Structure</div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-col-header">About</div>
+      <ul>
+        <li>Our Story</li>
+        <li>Board &amp; Team</li>
+        <li>How It Works</li>
+        <li>Financials</li>
+        <li>Tax ID: 92-3994022</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-header">Our Work</div>
+      <ul>
+        <li>Women &amp; Children's Shelter</li>
+        <li>Evacuation &amp; Relief</li>
+        <li>Armed Forces Aid</li>
+        <li>War Crimes Investigation</li>
+        <li>Partner Criteria</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-header">Get Involved</div>
+      <ul>
+        <li>💛 Donate</li>
+        <li>Shop</li>
+        <li>Volunteer</li>
+        <li>Become a Sponsor</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-header">Connect</div>
+      <ul>
+        <li>Contact Us</li>
+        <li>Blog &amp; News</li>
+        <li>Press Coverage</li>
+        <li>Events</li>
+        <li>Social Media Links</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-header">Legal &amp; Policy</div>
+      <ul>
+        <li>Privacy Policy</li>
+        <li>Terms of Use</li>
+        <li>501(c)(3) Status</li>
+        <li>Donation Refund Policy</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- UTILITY NAV -->
+  <div class="section-title"><span>📌</span> Utility / Top Bar (Persistent)</div>
+  <p style="font-size:0.85rem;color:var(--mid-gray);margin-bottom:1rem;">These items should appear in the top-right of
+    every page, separate from the main nav, for instant access:</p>
+  <div class="utility-nav">
+    <div class="utility-item cta">🌻 DONATE NOW</div>
+    <div class="utility-item">Contact</div>
+    <div class="utility-item">Shop</div>
+    <div class="utility-item">Donation Tracker</div>
+  </div>
+
+  <!-- RATIONALE TABLE -->
+  <div class="section-title"><span>📋</span> Key Changes & Rationale</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Change</th>
+        <th>Original</th>
+        <th>Proposed</th>
+        <th>Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge badge-merged">Merged</span></td>
+        <td>Financials + Donation Tracker + How It Works (3 separate nav items)</td>
+        <td>Under <strong>About → Transparency</strong></td>
+        <td>Trust signals belong in About. Reduces top-level nav count.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-removed">Removed from nav</span></td>
+        <td>25 individual press clips as nav subitems</td>
+        <td>Single <strong>Press Coverage</strong> archive page</td>
+        <td>Nav is for navigation, not content. An archive page is the standard pattern.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-new">Renamed</span></td>
+        <td>"Boots on the Ground"</td>
+        <td><strong>Our Work</strong></td>
+        <td>More universally understood; military jargon may alienate some donors. Clearer and more professional.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-new">New Group</span></td>
+        <td>Contact / Shop / Sponsors / Community Orgs scattered</td>
+        <td><strong>Get Involved</strong> section</td>
+        <td>Standard nonprofit IA. Converts passive browsers into active supporters. Also adds a Volunteer page.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-merged">Consolidated</span></td>
+        <td>In the News + Blog (separate top-level items)</td>
+        <td><strong>News &amp; Stories</strong></td>
+        <td>Combines all content/storytelling in one section. Easier to find and maintain.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-footer">Footer</span></td>
+        <td>Contact (top nav)</td>
+        <td>Footer + utility bar</td>
+        <td>Contact in footer is universal best practice. Saves precious main nav space.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-new">New page</span></td>
+        <td>—</td>
+        <td><strong>Volunteer</strong> under Get Involved</td>
+        <td>Critical for grassroots nonprofits. Increases donor-to-advocate conversion.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-new">New page</span></td>
+        <td>—</td>
+        <td><strong>Field Dispatches</strong> under News</td>
+        <td>The "Dispatch from Ukraine" articles are unique assets — a dedicated section elevates them and
+          differentiates from press coverage.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-cta">Persistent CTA</span></td>
+        <td>Donate duplicated at end of nav</td>
+        <td>Sticky utility bar, always visible</td>
+        <td>Donate button should be visible on every page. Utility bar is the nonprofit best practice.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FOOTER NOTE -->
+  <div
+    style="background:var(--deep-blue);color:rgba(255,255,255,0.7);border-radius:12px;padding:1.5rem;font-size:0.82rem;line-height:1.7;margin-bottom:2rem;">
+    <strong style="color:white;display:block;margin-bottom:0.5rem;">💡 Nonprofit Best Practice Summary</strong>
+    Ideal nonprofit nav has <strong style="color:var(--ukraine-yellow)">5–6 top-level items max</strong>.
+    Always include a persistent, visually distinct <strong style="color:var(--ukraine-yellow)">Donate CTA</strong> in
+    the utility bar.
+    Keep <strong style="color:var(--ukraine-yellow)">transparency pages</strong> (financials, tracker) inside About
+    for trust-building.
+    A <strong style="color:var(--ukraine-yellow)">Get Involved</strong> section converts community interest into
+    action.
+    Footer should contain legal info, secondary links, and social media.
+    Press archives should be a single page, not a nav flood.
+  </div>
+
+  </div>
+</body>
+
+</html>
