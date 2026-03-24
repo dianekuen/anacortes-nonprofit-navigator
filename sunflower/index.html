@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunflower Client Landing</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem 3rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0 1.5rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 0.75rem 0 0;
+            color: #555;
+        }
+
+        section.card {
+            background: white;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            margin: 1rem 0;
+            padding: 1.2rem 1.4rem;
+        }
+
+        section.card h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        section.card ul {
+            margin: 0.6rem 0 0.2rem 1.2rem;
+        }
+
+        section.card li {
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header style="display:flex; align-items:center; gap:1rem; justify-content:center;">
+            <img id="sunflower-logo" src="sunflowerfund-circlelogo.png" alt="Sunflower logo"
+                style="width:56px; height:56px; object-fit:contain; border-radius:8px; border:1px solid #ddd;" />
+            <div>
+                <h1>Sunflower F.U.N.D. Client Project Dashboard</h1>
+            </div>
+        </header>
+
+        <section class="card" id="google-workspace">
+            <h2>Google Workspace</h2>
+            <p>Deploy and optimize core collaboration tools for team efficiency and security.</p>
+            <h3>Completed items</h3>
+            <ul>
+                <li>✅ Apply for Workspace for Nonprofits</li>
+                <li>✅ Setup accounts with domain name <a
+                        href="https://drive.google.com/file/d/1tCHNVOTL34eUhUUedc0M1XNm5ujuMavA/view?usp=sharing"
+                        target="_blank" rel="noopener">(Google Workspace Account Standards)</a></li>
+                <li>✅ Setup Shared Drive structure <a href="#" title="link placeholder">(Google Shared Drive Guide)</a>
+                </li>
+            </ul>
+            <h3>Needs client action</h3>
+            <ul>
+                <li>☐ Activate their Gmail accounts (received login info emails from Google)</li>
+                <li>☐ Move files into folder structure according to the Shared Drive guide</li>
+            </ul>
+        </section>
+
+        <section class="card" id="security">
+            <h2>Security</h2>
+            <p>Harden systems, protect data, and keep the client safe by design.</p>
+            <h3>Completed items</h3>
+            <ul>
+                <li>✅ Setup 1Password for team access and credentials</li>
+            </ul>
+            <h3>In progress</h3>
+            <ul>
+                <li>🕒 Update master spreadsheet of platforms and accounts <a
+                        href="https://docs.google.com/spreadsheets/d/1xU7DDaSTl8YAsjiRNhqgxEGQI4GgLTqHpY7tJP4urak/edit?usp=sharing"
+                        target="_blank" rel="noopener">(master accounts reference)</a></li>
+            </ul>
+            <h3>Needs client action</h3>
+            <ul>
+                <li>☐ Add other members to 1Password family</li>
+                <li>☐ Add payment CC on 1Password account</li>
+                <li>☐ Create recovery backup with another team member</li>
+            </ul>
+        </section>
+
+        <section class="card" id="website-rework">
+            <h2>Website Rework</h2>
+            <p>Revamp site structure, messaging, and UX to improve conversions.</p>
+            <h3>Completed items</h3>
+            <ul>
+                <li>✅ Reorganized overall site navigation for improved usability and long-term maintenance <a
+                        href="sunflower-sitemap.html" target="_blank" rel="noopener">(new sitemap)</a></li>
+                <li>✅ Fixed blog visual presentation and layout</li>
+                <li>✅ Updated press coverage news to blog list style with thumbnail photos</li>
+                <li>✅ Redesigned teams page with better layout</li>
+            </ul>
+            <h3>Pending items</h3>
+            <ul>
+                <li>☐ Create donation tracker using dynamic data with Canva charts (deliverable: maintenance doc for
+                    connecting Google Sheet to Canva and pulling LGL data)</li>
+                <li>☐ Add newsletter subscription integration with LGL</li>
+                <li>☐ Create how-to deliverable for adding new blog posts and press releases</li>
+            </ul>
+        </section>
+
+        <section class="card" id="community-outreach">
+            <h2>Community Outreach</h2>
+            <p>Grow presence and engagement through social media, video, and content.</p>
+            <h3>Not started</h3>
+            <ul>
+                <li>☐ Set up Canva brand kit</li>
+                <li>☐ Create YouTube channel</li>
+                <li>☐ Configure social media meta business settings</li>
+                <li>☐ Setup auto-posting of blog content to Facebook</li>
+            </ul>
+            <h3>Needs client action</h3>
+            <ul>
+                <li>☐ Provide initial brand assets for Canva design</li>
+                <li>☐ Approve YouTube channel strategy and channel details</li>
+                <li>☐ Provide access and approval for meta business account setup</li>
+                <li>☐ Confirm blog auto-posting workflow and content cadence to Facebook</li>
+            </ul>
+        </section>
+
+        <section class="card" id="data-integration">
+            <h2>Data Integration & Grant Reporting</h2>
+            <p>Connect data sources, automate reporting, and support funding success.</p>
+            <h3>PayPal to LGL</h3>
+            <ul>
+                <li>☐ Import three years of historical grant data from PayPal transactions into LGL for report
+                    continuity</li>
+                <li>☐ Configure LGL to categorize PayPal grant distributions by program area</li>
+            </ul>
+            <h3>Square to LGL</h3>
+            <ul>
+                <li>☐ Audit and clean up Square sale items in preparation for integration</li>
+                <li>☐ Build workflow to sync Square transactions to LGL (new transactions only)</li>
+                <li>☐ Convert Square sales into customer mailing list records and donations into donor records</li>
+            </ul>
+            <h3>Notes</h3>
+            <p>Historical Square data will not be imported; only new transactions will sync.</p>
+        </section>
+
+        <section class="card" id="backup">
+            <h2>Backup</h2>
+            <p>Ensure reliable backups and restore capability for all critical assets.</p>
+            <h3>Completed items</h3>
+            <ul>
+                <li>☐ (pending) Setup iDrive for Google Workspace</li>
+            </ul>
+            <h3>Needs client action</h3>
+            <ul>
+                <li>☐ Accept and review iDrive setup guide for device backups (mobile and computer) <a href="#"
+                        title="link placeholder">(iDrive configuration deliverable)</a></li>
+                <li>☐ Accept and review process for adding accounts in the future <a href="#"
+                        title="link placeholder">(iDrive account onboarding)</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Use this page as a living checklist to track deliverables and progress.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
