@@ -44,8 +44,9 @@
     <main class="about">
         <div class="container">
             <h2 class="section-title">Thanks for completing this survey!</h2>
-            <p style="text-align: center;">Follow my writing at <a href="log.html" class="nav-link">Navigator's Log</a>.
-            </p>
+            <p style="text-align: center;">Share the survey with other nonprofit leaders: <button id="share-btn"
+                    style="background-color: #C85A54; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">Copy
+                    Link</button></p>
         </div>
     </main>
 
@@ -59,6 +60,11 @@
             var menu = document.getElementById('nav-menu');
             if (menu) menu.classList.toggle('show');
         }
+        document.getElementById('share-btn').addEventListener('click', function () {
+            navigator.clipboard.writeText('https://dianekuen.github.io/anacortes-nonprofit-navigator/survey-freeresources.html').then(function () {
+                alert('Link copied to clipboard!');
+            });
+        });
     </script>
 </body>
 
