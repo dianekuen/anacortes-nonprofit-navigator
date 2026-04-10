@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://dianekuen.github.io/anacortes-nonprofit-navigator/cover_facebook.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <title>Survey - Free Resources — Anacortes Nonprofit Navigator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Legacy fallback -->
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-mark">
+                    <div class="logo-shape shape1"></div>
+                    <div class="logo-shape shape2"></div>
+                    <div class="logo-shape shape3"></div>
+                </div>
+                <div class="logo-text">
+                    <h1>Anacortes Nonprofit Navigator</h1>
+                    <p class="tagline">Practical systems for mission-driven organizations</p>
+                </div>
+            </a>
+            <nav>
+                <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <!-- <li><a href="services.html" class="nav-link">Services</a></li>-->
+                    <li><a href="about.html" class="nav-link">Meet Diane</a></li>
+                    <li><a href="log.html" class="nav-link">Navigator's Log</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <iframe src="https://tally.so/embed/XxMeeY?alignLeft=1&transparentBackground=1&dynamicHeight=1" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" title="Free Resources Survey"></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Anacortes Nonprofit Navigator. Serving nonprofits in Anacortes and beyond.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('nav-menu');
+            if (menu) menu.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>
