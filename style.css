@@ -41,6 +41,7 @@ nav ul {
     gap: 30px;
     margin: 0;
     padding: 0;
+    justify-content: flex-end;
 }
 
 nav a {
@@ -538,6 +539,8 @@ footer p {
     font-size: 28px;
 }
 
+@media (max-width: 768px) {
+
 .header-content {
     flex-direction: column;
     align-items: flex-start;
@@ -563,6 +566,8 @@ nav ul.show {
     position: absolute;
     right: 20px;
     top: 25px;
+}
+
 }
 
 /* About page specific additions */
