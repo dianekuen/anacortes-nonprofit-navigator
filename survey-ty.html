@@ -44,32 +44,24 @@
     <main class="about">
         <div class="container">
             <h2 class="section-title">Thanks for completing this survey!</h2>
-            <p style="text-align: center;">Share the survey with other nonprofit leaders: <button id="share-btn"
-                    style="background-color: #C85A54; color: white; padding: 12px 24px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600;">Copy
-                    Link</button></p>
+
         </div>
     </main>
 
     <footer>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;">
-            <p style="margin: 0;">&copy; 2026 Anacortes Nonprofit Navigator. Serving nonprofits in Anacortes and beyond.</p>
+        <div class="container"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;">
+            <p style="margin: 0;">&copy; 2026 Anacortes Nonprofit Navigator. Serving nonprofits in Anacortes and beyond.
+            </p>
             <div style="display: flex; gap: 16px; align-items: center;">
-                <a href="https://www.facebook.com/anonprofitnavigator" target="_blank"><img src="facebook-logo.webp" alt="Facebook" width="28" height="28"></a>
-                <a href="https://www.instagram.com/anonprofitnavigator" target="_blank"><img src="instagram-logo.webp" alt="Instagram" width="28" height="28"></a>
+                <a href="https://www.facebook.com/anonprofitnavigator" target="_blank"><img src="facebook-logo.webp"
+                        alt="Facebook" width="28" height="28"></a>
+                <a href="https://www.instagram.com/anonprofitnavigator" target="_blank"><img src="instagram-logo.webp"
+                        alt="Instagram" width="28" height="28"></a>
             </div>
         </div>
     </footer>
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById('nav-menu');
-            if (menu) menu.classList.toggle('show');
-        }
-        document.getElementById('share-btn').addEventListener('click', function () {
-            navigator.clipboard.writeText('https://dianekuen.github.io/anacortes-nonprofit-navigator/survey-freeresources.html').then(function () {
-                alert('Link copied to clipboard!');
-            });
-        });
-    </script>
+
 </body>
 
 </html>
