@@ -309,6 +309,12 @@ nav a.active {
     margin-bottom: 20px;
 }
 
+/* Subscribe Section */
+.subscribe {
+    padding: 80px 0;
+    background: #FEF3E2;
+    text-align: center;
+}
 
 /* Contact Section */
 .contact {
