@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Waypoint — Anacortes Nonprofit Navigator</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="The Waypoint is the new home for nonprofit operations insight, now hosted on Beehiiv. Subscribe for monthly strategy, tools, and practical guidance.">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+
+                <a href="index.html" class="logo">
+                    <div class="logo-mark">
+                        <div class="logo-shape shape1"></div>
+                        <div class="logo-shape shape2"></div>
+                        <div class="logo-shape shape3"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Anacortes Nonprofit Navigator</h1>
+                        <p class="tagline">Practical systems for mission-driven organizations</p>
+                    </div>
+                </a>
+                <nav>
+                    <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+                    <ul id="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">Meet Diane</a></li>
+                        <li><a href="waypoint.html" class="nav-link active" target="_blank"
+                                rel="noopener noreferrer">The Waypoint</a></li>
+                        <li><a href="https://calendar.app.google/pLgEQzZCpTb8WZA29" class="nav-link">Book
+                                Appointment</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="waypoint-hero">
+            <div class="container">
+                <h2>The Waypoint: Practical nonprofit operations insight delivered monthly.</h2>
+                <p>Strategy, systems, and solutions for nonprofit leaders who want to work smarter. Subscribe now and
+                    get the next issue delivered directly to your inbox.</p>
+                <a href="http://thewaypoint.beehiiv.com/" class="cta-button" target="_blank"
+                    rel="noopener noreferrer">Subscribe to The Waypoint</a>
+            </div>
+        </section>
+
+        <section class="waypoint-posts">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Recent Waypoint issues</h2>
+                        <p class="section-subtitle">A newsletter for nonprofit leaders who want systems, strategy, and
+                            simpler operations.</p>
+                    </div>
+                    <a href="http://thewaypoint.beehiiv.com/" class="view-all" target="_blank"
+                        rel="noopener noreferrer">Go to The Waypoint</a>
+                </div>
+
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <span class="post-category">Strategy</span>
+                        <h3>How to build a practical quarterly operations plan</h3>
+                        <p>Keep your team aligned without adding endless meetings. This issue breaks down a simple
+                            planning rhythm for nonprofits.</p>
+                        <a href="http://thewaypoint.beehiiv.com/" class="read-more" target="_blank"
+                            rel="noopener noreferrer">Read issue</a>
+                    </article>
+                    <article class="post-card">
+                        <span class="post-category">Technology</span>
+                        <h3>Choosing the right tools when your budget is tight</h3>
+                        <p>Three inexpensive platforms that can help your nonprofit track donors, organize volunteers,
+                            and simplify reporting.</p>
+                        <a href="http://thewaypoint.beehiiv.com/" class="read-more" target="_blank"
+                            rel="noopener noreferrer">Read issue</a>
+                    </article>
+                    <article class="post-card">
+                        <span class="post-category">Operations</span>
+                        <h3>Protect your nonprofit’s key accounts with a simple access plan</h3>
+                        <p>Reduce risk by documenting who can access what, when, and how. A practical checklist for
+                            organizations of any size.</p>
+                        <a href="http://thewaypoint.beehiiv.com/" class="read-more" target="_blank"
+                            rel="noopener noreferrer">Read issue</a>
+                    </article>
+                    <article class="post-card">
+                        <span class="post-category">Leadership</span>
+                        <h3>Reclaim time with a meeting system your board will actually use</h3>
+                        <p>Designing board meetings that are shorter, more focused, and more useful for your nonprofit’s
+                            mission.</p>
+                        <a href="http://thewaypoint.beehiiv.com/" class="read-more" target="_blank"
+                            rel="noopener noreferrer">Read issue</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;">
+            <p style="margin: 0;">&copy; 2026 Anacortes Nonprofit Navigator. Serving nonprofits in Anacortes and beyond.
+            </p>
+            <div style="display: flex; gap: 16px; align-items: center;">
+                <a href="https://www.facebook.com/anonprofitnavigator" target="_blank"><img src="facebook-logo.webp"
+                        alt="Facebook" width="28" height="28"></a>
+                <a href="https://www.instagram.com/anonprofitnavigator" target="_blank"><img src="instagram-logo.webp"
+                        alt="Instagram" width="28" height="28"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('nav-menu');
+            if (menu) menu.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>
