@@ -518,29 +518,6 @@ nav a.active {
     text-align: left;
 }
 
-/* Center Beehiiv subscribe form */
-.beehiiv-embed,
-.beehiiv-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-/* Center the actual Beehiiv form */
-.beehiiv-embed iframe,
-.beehiiv-container iframe,
-iframe[src*="beehiiv"] {
-    margin: 0 auto;
-    display: block;
-}
-
-/* Optional: center input/button contents */
-.beehiiv-embed form,
-.beehiiv-container form {
-    margin: 0 auto;
-    text-align: center;
-}
 
 /* The Waypoint Launch Banner */
 .waypoint-launch {
@@ -623,7 +600,7 @@ iframe[src*="beehiiv"] {
     font-style: italic;
 }
 
-.launch-note a {
+.launch-subtext a {
     display: inline-block;
     color: #1A365D;
     font-weight: 700;
@@ -631,7 +608,7 @@ iframe[src*="beehiiv"] {
     text-decoration: none;
 }
 
-.launch-note a:hover {
+.launch-subtext a:hover {
     font-style: normal;
     color: #C85A54;
 }
