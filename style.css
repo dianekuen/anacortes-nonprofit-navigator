@@ -56,32 +56,6 @@ nav a:hover {
     color: #C85A54;
 }
 
-/* Center Beehiiv embed using flex wrapper per embed guidance */
-.beehiiv-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 0 12px;
-    /* small gutter */
-}
-
-.beehiiv-inner {
-    width: 100%;
-}
-
-.beehiiv-inner iframe,
-.beehiiv-inner form,
-.beehiiv-inner .beehiiv-form {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-}
-
-@media (max-width: 600px) {
-    .beehiiv-inner {
-        max-width: 100%;
-    }
-}
 
 nav a.active {
     color: #C85A54;
@@ -555,7 +529,7 @@ nav a.active {
 
 .launch-content {
     text-align: center;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -595,50 +569,6 @@ nav a.active {
     color: #5B8BA0;
     margin-bottom: 0;
     font-style: italic;
-}
-
-.launch-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
-}
-
-.launch-row .launch-subtext {
-    margin-bottom: 0;
-    text-align: center;
-    max-width: 360px;
-}
-
-.beehiiv-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-}
-
-.beehiiv-inner {
-    width: 100%;
-}
-
-.beehiiv-inner iframe,
-.beehiiv-inner form,
-.beehiiv-inner .beehiiv-form {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-}
-
-@media (max-width: 800px) {
-    .launch-row {
-        flex-direction: column;
-    }
-
-    .launch-row .launch-subtext {
-        max-width: 100%;
-    }
 }
 
 .launch-button {
