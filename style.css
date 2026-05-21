@@ -56,25 +56,30 @@ nav a:hover {
     color: #C85A54;
 }
 
-/* Center Beehiiv embed forms inserted by the loader */
-.beehiiv-embed {
-    text-align: center;
+/* Center Beehiiv embed using flex wrapper per embed guidance */
+.beehiiv-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 12px;
+    /* small gutter */
 }
 
-.beehiiv-embed iframe,
-.beehiiv-embed form,
-.beehiiv-embed .beehiiv-form {
-    display: block;
-    margin: 0 auto;
-    max-width: 520px;
+.beehiiv-inner {
+    max-width: 600px;
     width: 100%;
 }
 
-@media (max-width: 520px) {
+.beehiiv-inner iframe,
+.beehiiv-inner form,
+.beehiiv-inner .beehiiv-form {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
 
-    .beehiiv-embed iframe,
-    .beehiiv-embed form,
-    .beehiiv-embed .beehiiv-form {
+@media (max-width: 600px) {
+    .beehiiv-inner {
         max-width: 100%;
     }
 }
