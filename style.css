@@ -56,6 +56,29 @@ nav a:hover {
     color: #C85A54;
 }
 
+/* Center Beehiiv embed forms inserted by the loader */
+.beehiiv-embed {
+    text-align: center;
+}
+
+.beehiiv-embed iframe,
+.beehiiv-embed form,
+.beehiiv-embed .beehiiv-form {
+    display: block;
+    margin: 0 auto;
+    max-width: 520px;
+    width: 100%;
+}
+
+@media (max-width: 520px) {
+
+    .beehiiv-embed iframe,
+    .beehiiv-embed form,
+    .beehiiv-embed .beehiiv-form {
+        max-width: 100%;
+    }
+}
+
 nav a.active {
     color: #C85A54;
 }
